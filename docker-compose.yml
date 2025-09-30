@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: strapi-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - ffds-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  strapi:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: strapi-app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # keep these in sync with config/database.js
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DB_NAME}
+      DATABASE_USERNAME: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASSWORD}
+      DATABASE_SSL: "false"
+      PORT: 1337
+      HOST: 0.0.0.0
+      NODE_ENV: ${NODE_ENV}
+    ports:
+      - "1337:1337"
+    volumes:
+      - uploads:/srv/app/public/uploads   # persist media/uploads
+    networks:
+      - ffds-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  uploads:
+
+networks:
+  ffds-network:
+    driver: bridge
