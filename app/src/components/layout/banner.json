@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_banners",
+  "info": {
+    "displayName": "Banner",
+    "icon": "rocket"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
