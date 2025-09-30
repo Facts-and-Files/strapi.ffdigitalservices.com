@@ -3,11 +3,16 @@
 FROM node:22-alpine AS builder
 WORKDIR /srv/app
 
-# Tools often required to build native modules
-RUN apk add --no-cache python3 g++ make
+# Install npm 11 explicitly
+RUN npm install -g npm@11.4.1
+
+# Tools often required to build native modules + PostgreSQL client headers
+RUN apk add --no-cache python3 g++ make postgresql-dev
 
 # Copy package manifests and install dependencies (cache-friendly)
 COPY package*.json ./
+
+# Install dependencies, including pg
 RUN npm ci
 
 # Copy application source
@@ -20,6 +25,9 @@ RUN npm run build
 FROM node:22-alpine AS production
 WORKDIR /srv/app
 
+# Install runtime dependencies for pg
+RUN apk add --no-cache libpq
+
 # Copy only the built app & node_modules from builder
 COPY --from=builder /srv/app /srv/app
 
@@ -27,5 +35,5 @@ COPY --from=builder /srv/app /srv/app
 ENV NODE_ENV=production
 EXPOSE 1337
 
-# Start Strapi in production mode (ensure package.json has a "start" script)
+# Start Strapi in production mode
 CMD ["npm", "run", "start"]

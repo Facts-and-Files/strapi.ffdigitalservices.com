@@ -48,6 +48,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    command: npm run dev
 
 volumes:
   postgres-data:
@@ -56,3 +57,4 @@ volumes:
 networks:
   ffds-network:
     driver: bridge
+
