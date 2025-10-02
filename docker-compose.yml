@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
-      - ffds-network
+      - ffds_network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 10s
@@ -24,11 +24,11 @@ services:
       context: ./app
       dockerfile: Dockerfile
     container_name: strapi-app
+    user: "${UID}:${GID}"
     restart: unless-stopped
     env_file:
       - .env
     environment:
-      # keep these in sync with config/database.js
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
@@ -42,21 +42,22 @@ services:
     ports:
       - "1337:1337"
     volumes:
-      - ./app:/srv/app                    # mount source code
-      - /srv/app/node_modules   
-      - uploads:/srv/app/public/uploads   # persist media/uploads
+      - ./app:/srv/app                  # source code mount
+      - node_modules:/srv/app/node_modules  # container-managed modules
+      - uploads:/srv/app/public/uploads
     networks:
-      - ffds-network
+      - ffds_network
     depends_on:
       postgres:
         condition: service_healthy
-    command: npm run dev
+    command: npm run dev                # for dev mode
 
 volumes:
   postgres-data:
   uploads:
+  node_modules:
 
 networks:
-  ffds-network:
-    driver: bridge
-
+  ffds_network:
+    external: true
+    name: ffds_network
