@@ -430,6 +430,44 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
+  collectionName: 'authors';
+  info: {
+    displayName: 'Author';
+    pluralName: 'authors';
+    singularName: 'author';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullName: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::author.author'
+    > &
+      Schema.Attribute.Private;
+    news_posts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-post.news-post'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -483,6 +521,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.person-card',
         'blocks.faqs',
         'blocks.newsletter',
+        'blocks.featured-news',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -496,6 +535,40 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
+  collectionName: 'news_posts';
+  info: {
+    displayName: 'News Post';
+    pluralName: 'news-posts';
+    singularName: 'news-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    content: Schema.Attribute.RichText;
+    contentTags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    featuredImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-post.news-post'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -524,6 +597,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.faqs',
         'blocks.content-with-image',
         'blocks.card-grid',
+        'blocks.featured-news',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -535,6 +609,32 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    displayName: 'Tag';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1052,9 +1152,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::author.author': ApiAuthorAuthor;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::page.page': ApiPagePage;
+      'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

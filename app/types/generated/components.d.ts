@@ -35,6 +35,19 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFeaturedNews extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_news';
+  info: {
+    displayName: 'Featured News';
+  };
+  attributes: {
+    news_posts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-post.news-post'
+    >;
+  };
+}
+
 export interface BlocksHero extends Struct.ComponentSchema {
   collectionName: 'components_blocks_heroes';
   info: {
@@ -185,6 +198,7 @@ declare module '@strapi/strapi' {
       'blocks.card-grid': BlocksCardGrid;
       'blocks.content-with-image': BlocksContentWithImage;
       'blocks.faqs': BlocksFaqs;
+      'blocks.featured-news': BlocksFeaturedNews;
       'blocks.hero': BlocksHero;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
