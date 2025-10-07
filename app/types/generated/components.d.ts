@@ -41,7 +41,7 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
     displayName: 'Featured News';
   };
   attributes: {
-    news_posts: Schema.Attribute.Relation<
+    newsPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::news-post.news-post'
     >;

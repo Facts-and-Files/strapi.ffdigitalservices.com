@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "news_posts": {
+    "newsPosts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::news-post.news-post"
