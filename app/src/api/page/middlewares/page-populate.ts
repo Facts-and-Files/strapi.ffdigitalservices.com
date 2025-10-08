@@ -45,7 +45,7 @@ const populate = {
             "blocks.newsletter": true,
             "blocks.featured-news": {
                 populate: {
-                    news_posts: {
+                    newsPosts: {
                         populate: {
                             featuredImage: {
                                 fields: ["alternativeText", "url"]
