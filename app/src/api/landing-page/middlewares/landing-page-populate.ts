@@ -3,6 +3,7 @@
  */
 
 import type { Core } from '@strapi/strapi';
+import projectPost from '../../project-post/controllers/project-post';
 
 const populate = {
     blocks: {
@@ -51,6 +52,17 @@ const populate = {
                                 fields: ["alternativeText", "url"]
                             },
                             author: true,
+                        }
+                    }
+                }
+            },
+            "blocks.featured-projects": {
+                populate: {
+                    projectPosts: {
+                        populate: {
+                            image: {
+                                fields:["alternativeText", "url"]
+                            }
                         }
                     }
                 }

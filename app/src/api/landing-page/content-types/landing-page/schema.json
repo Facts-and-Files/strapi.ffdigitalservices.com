@@ -28,7 +28,8 @@
         "blocks.person-card",
         "blocks.faqs",
         "blocks.newsletter",
-        "blocks.featured-news"
+        "blocks.featured-news",
+        "blocks.featured-projects"
       ]
     }
   }
