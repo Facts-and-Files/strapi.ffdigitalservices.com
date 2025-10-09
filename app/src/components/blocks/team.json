@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_teams",
+  "info": {
+    "displayName": "Team"
+  },
+  "options": {},
+  "attributes": {
+    "teamMember": {
+      "type": "component",
+      "component": "blocks.person-card",
+      "repeatable": true
+    },
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

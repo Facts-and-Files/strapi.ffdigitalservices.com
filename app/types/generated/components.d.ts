@@ -54,10 +54,12 @@ export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
     displayName: 'Featured Projects';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     projectPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::project-post.project-post'
     >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -121,6 +123,18 @@ export interface BlocksSectionHeading extends Struct.ComponentSchema {
     anchorLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksTeam extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_teams';
+  info: {
+    displayName: 'Team';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    teamMember: Schema.Attribute.Component<'blocks.person-card', true>;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -220,6 +234,7 @@ declare module '@strapi/strapi' {
       'blocks.newsletter': BlocksNewsletter;
       'blocks.person-card': BlocksPersonCard;
       'blocks.section-heading': BlocksSectionHeading;
+      'blocks.team': BlocksTeam;
       'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;

@@ -9,6 +9,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::project-post.project-post"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}

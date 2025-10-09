@@ -14,7 +14,7 @@
     "title": {
       "type": "string"
     },
-    "description": {
+    "shortDescription": {
       "type": "text"
     },
     "image": {
@@ -30,6 +30,9 @@
     },
     "externalUrl": {
       "type": "string"
+    },
+    "longDescription": {
+      "type": "text"
     }
   }
 }

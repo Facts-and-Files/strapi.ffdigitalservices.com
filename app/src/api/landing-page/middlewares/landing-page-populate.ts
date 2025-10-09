@@ -67,6 +67,17 @@ const populate = {
                     }
                 }
             },
+            "blocks.team": {
+                populate: {
+                    teamMember: {
+                        populate: {
+                            image: {
+                                fields: ["alternativeText", "url"]
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

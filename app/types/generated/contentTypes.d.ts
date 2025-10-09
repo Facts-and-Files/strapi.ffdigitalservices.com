@@ -523,6 +523,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.newsletter',
         'blocks.featured-news',
         'blocks.featured-projects',
+        'blocks.team',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -631,7 +632,6 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
     externalUrl: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -640,7 +640,9 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
       'api::project-post.project-post'
     > &
       Schema.Attribute.Private;
+    longDescription: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

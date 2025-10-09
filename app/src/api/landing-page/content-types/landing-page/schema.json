@@ -29,7 +29,8 @@
         "blocks.faqs",
         "blocks.newsletter",
         "blocks.featured-news",
-        "blocks.featured-projects"
+        "blocks.featured-projects",
+        "blocks.team"
       ]
     }
   }
