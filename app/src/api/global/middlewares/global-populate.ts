@@ -33,6 +33,7 @@ const populate = {
         },
       },
       legalLinks: true,
+      newsletter: true,
     }
   }
 };

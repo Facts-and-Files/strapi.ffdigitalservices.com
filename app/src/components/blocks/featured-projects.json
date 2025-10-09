@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_featured_projects",
+  "info": {
+    "displayName": "Featured Projects"
+  },
+  "options": {},
+  "attributes": {
+    "projectPosts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-post.project-post"
+    }
+  },
+  "config": {}
+}

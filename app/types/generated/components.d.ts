@@ -48,6 +48,19 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_projects';
+  info: {
+    displayName: 'Featured Projects';
+  };
+  attributes: {
+    projectPosts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-post.project-post'
+    >;
+  };
+}
+
 export interface BlocksHero extends Struct.ComponentSchema {
   collectionName: 'components_blocks_heroes';
   info: {
@@ -134,6 +147,7 @@ export interface LayoutFooter extends Struct.ComponentSchema {
   attributes: {
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
+    newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
   };
@@ -175,7 +189,7 @@ export interface SharedLink extends Struct.ComponentSchema {
     isButtonLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']>;
+    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TRANSPARENT']>;
   };
 }
 
@@ -200,6 +214,7 @@ declare module '@strapi/strapi' {
       'blocks.content-with-image': BlocksContentWithImage;
       'blocks.faqs': BlocksFaqs;
       'blocks.featured-news': BlocksFeaturedNews;
+      'blocks.featured-projects': BlocksFeaturedProjects;
       'blocks.hero': BlocksHero;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;

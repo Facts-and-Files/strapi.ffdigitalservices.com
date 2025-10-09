@@ -616,6 +616,37 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
+  collectionName: 'project_posts';
+  info: {
+    displayName: 'Project Post';
+    pluralName: 'project-posts';
+    singularName: 'project-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-post.project-post'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
@@ -1157,6 +1188,7 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::page.page': ApiPagePage;
+      'api::project-post.project-post': ApiProjectPostProjectPost;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

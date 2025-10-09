@@ -23,6 +23,11 @@
       "type": "component",
       "component": "shared.link",
       "repeatable": true
+    },
+    "newsletter": {
+      "type": "component",
+      "component": "blocks.newsletter",
+      "repeatable": false
     }
   },
   "config": {}
