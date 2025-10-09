@@ -132,6 +132,7 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     icon: 'rocket';
   };
   attributes: {
+    legalLinks: Schema.Attribute.Component<'shared.link', true>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;

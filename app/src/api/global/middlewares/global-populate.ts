@@ -31,7 +31,8 @@ const populate = {
             fields: ["alternativeText","url"]
           }
         },
-      }
+      },
+      legalLinks: true,
     }
   }
 };

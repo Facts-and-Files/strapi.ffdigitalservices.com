@@ -18,6 +18,11 @@
     },
     "text": {
       "type": "text"
+    },
+    "legalLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
     }
   },
   "config": {}
