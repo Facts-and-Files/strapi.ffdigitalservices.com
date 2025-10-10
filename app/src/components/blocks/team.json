@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "teamMember": {
+    "teamMembers": {
       "type": "component",
       "component": "blocks.person-card",
       "repeatable": true

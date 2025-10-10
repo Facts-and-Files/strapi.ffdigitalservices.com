@@ -30,7 +30,8 @@
         "blocks.newsletter",
         "blocks.featured-news",
         "blocks.featured-projects",
-        "blocks.team"
+        "blocks.team",
+        "blocks.featured-partners"
       ]
     }
   }

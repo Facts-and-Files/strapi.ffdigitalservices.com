@@ -453,7 +453,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
       'api::author.author'
     > &
       Schema.Attribute.Private;
-    news_posts: Schema.Attribute.Relation<
+    newsPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::news-post.news-post'
     >;
@@ -524,6 +524,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.featured-news',
         'blocks.featured-projects',
         'blocks.team',
+        'blocks.featured-partners',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

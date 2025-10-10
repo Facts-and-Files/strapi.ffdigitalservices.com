@@ -69,7 +69,7 @@ const populate = {
             },
             "blocks.team": {
                 populate: {
-                    teamMember: {
+                    teamMembers: {
                         populate: {
                             image: {
                                 fields: ["alternativeText", "url"]
@@ -77,7 +77,8 @@ const populate = {
                         }
                     }
                 }
-            }
+            },
+            "blocks.featured-partners": true
         }
     }
 }

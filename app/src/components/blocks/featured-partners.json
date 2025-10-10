@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_featured_partners",
+  "info": {
+    "displayName": "Featured Partners"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "partners": {
+      "type": "component",
+      "component": "shared.logo-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

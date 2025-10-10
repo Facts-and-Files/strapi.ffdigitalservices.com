@@ -48,6 +48,18 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_partners';
+  info: {
+    displayName: 'Featured Partners';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    partners: Schema.Attribute.Component<'shared.logo-link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
   collectionName: 'components_blocks_featured_projects';
   info: {
@@ -133,7 +145,7 @@ export interface BlocksTeam extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    teamMember: Schema.Attribute.Component<'blocks.person-card', true>;
+    teamMembers: Schema.Attribute.Component<'blocks.person-card', true>;
     text: Schema.Attribute.String;
   };
 }
@@ -228,6 +240,7 @@ declare module '@strapi/strapi' {
       'blocks.content-with-image': BlocksContentWithImage;
       'blocks.faqs': BlocksFaqs;
       'blocks.featured-news': BlocksFeaturedNews;
+      'blocks.featured-partners': BlocksFeaturedPartners;
       'blocks.featured-projects': BlocksFeaturedProjects;
       'blocks.hero': BlocksHero;
       'blocks.markdown': BlocksMarkdown;
