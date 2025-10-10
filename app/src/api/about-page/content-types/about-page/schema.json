@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.team",
+        "blocks.section-heading",
+        "blocks.person-card",
+        "blocks.newsletter",
+        "blocks.markdown",
+        "blocks.hero",
+        "blocks.featured-projects",
+        "blocks.featured-partners",
+        "blocks.featured-news",
+        "blocks.faqs",
+        "blocks.content-with-image",
+        "blocks.card-grid"
+      ]
+    }
+  }
+}
