@@ -1,0 +1,18 @@
+name: Deploy to LIVE
+
+run-name: ${{ github.actor }} is deploying to LIVE...
+
+on:
+  release:
+    types: [published]
+
+env:
+  HOST: ${{ secrets.LIVE_SSH_HOST }}
+  PORT: ${{ secrets.LIVE_SSH_PORT }}
+  REMOTE_PATH: ${{ secrets.LIVE_REMOTE_PATH }}
+  LOCAL_PATH: app/src
+  SSH_USER: ${{ secrets.LIVE_SSH_USER }}
+  SSH_PRIVATE_KEY: ${{ secrets.LIVE_SSH_PRIVATE_KEY }}
+
+jobs:
+  deploy:
