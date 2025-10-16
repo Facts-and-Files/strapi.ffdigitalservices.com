@@ -6,13 +6,22 @@ on:
   release:
     types: [published]
 
-env:
-  HOST: ${{ secrets.LIVE_SSH_HOST }}
-  PORT: ${{ secrets.LIVE_SSH_PORT }}
-  REMOTE_PATH: ${{ secrets.LIVE_REMOTE_PATH }}
-  LOCAL_PATH: app/src
-  SSH_USER: ${{ secrets.LIVE_SSH_USER }}
-  SSH_PRIVATE_KEY: ${{ secrets.LIVE_SSH_PRIVATE_KEY }}
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            cd ~/strapi
+            git pull origin main
+            npm ci
+            npm run build
+            pm2 restart strapi
