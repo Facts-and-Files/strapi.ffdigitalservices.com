@@ -10,18 +10,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Deploy to Server via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SERVER_PORT }}
-          script: |
+
+      # Step 1: Set up SSH
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.SERVER_PORT || 22 }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      # Step 2: SSH into server and run commands
+      - name: Deploy via SSH
+        run: |
+          ssh -p ${{ secrets.SERVER_PORT || 22 }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} << 'EOF'
+          export PATH="/home/strapi/.nvm/versions/node/v22.20.0/bin:$PATH"
             cd ~/strapi
             git pull origin main
             npm ci
             npm run build
-            pm2 restart strapi
+            pm2 restart index
+          EOF
