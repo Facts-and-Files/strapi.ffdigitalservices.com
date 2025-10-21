@@ -41,6 +41,7 @@ services:
       NODE_ENV: ${NODE_ENV}
     ports:
       - "1337:1337"
+      - "5173:5173"
     volumes:
       - ./:/srv/app                  # source code mount
       - node_modules:/srv/app/node_modules  # container-managed modules
