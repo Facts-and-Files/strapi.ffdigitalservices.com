@@ -11,7 +11,14 @@ const populate = {
                 populate: {
                     links: true,
                     image: {
-                        fields: ["alternativeText", "url"]
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
                     }
                 }
             },
@@ -25,7 +32,14 @@ const populate = {
                 populate: {
                     link: true,
                     image: {
-                        fields: ["alternativeText", "url"]
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
                     }
                 }
             },
@@ -33,7 +47,7 @@ const populate = {
             "blocks.person-card": {
                 populate: {
                     image: {
-                        fields: ["alternativeText", "url"]
+                        fields: ["alternativeText", "url", "caption"]
                     }
                 }
             },
@@ -48,7 +62,14 @@ const populate = {
                     newsPosts: {
                         populate: {
                             featuredImage: {
-                                fields: ["alternativeText", "url"]
+                                fields: [
+                                    "alternativeText",
+                                    "url",
+                                    "formats",
+                                    "height",
+                                    "width",
+                                    "caption"
+                                ]
                             },
                             author: true,
                         }
@@ -60,11 +81,10 @@ const populate = {
 }
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
-  // Add your own logic here.
-  return async (ctx, next) => {
-    ctx.query.populate = populate;
-    strapi.log.info('In page-populate middleware.');
+    // Add your own logic here.
+    return async (ctx, next) => {
+        ctx.query.populate = populate;
 
-    await next();
+        await next();
   };
 };
