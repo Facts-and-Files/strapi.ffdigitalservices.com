@@ -5,47 +5,45 @@
 import type { Core } from '@strapi/strapi';
 
 const populate = {
-  banner: {
-    populate: {
-      link: true
-    },
-  },
-  header: {
-    populate: {
-      logo: {
+    banner: {
         populate: {
-          image: {
-            fields: ["alternativeText", "url"]
-          },
-        }
-      },
-      navItems: true,
-    }
-  },
-  footer: {
-    populate: {
-      navItems: true,
-      socialLinks: {
-        populate: {
-          image: {
-            fields: ["alternativeText","url"]
-          }
+            link: true
         },
-      },
-      legalLinks: true,
-      newsletter: true,
+    },
+    header: {
+        populate: {
+            logo: {
+                populate: {
+                    image: {
+                        fields: ["alternativeText", "url"]
+                    },
+                }
+            },
+            navItems: true,
+        }
+    },
+    footer: {
+        populate: {
+            navItems: true,
+            socialLinks: {
+                populate: {
+                    image: {
+                        fields: ["alternativeText","url"]
+                    }
+                },
+            },
+            legalLinks: true,
+            newsletter: true,
+        }
     }
-  }
 };
 
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
-  // Add your own logic here.
-  return async (ctx, next) => {
-    console.log( "hello" );
-    ctx.query.populate = populate;
-    strapi.log.info('In global-populate middleware.');
+    // Add your own logic here.
+    return async (ctx, next) => {
+        ctx.query.populate = populate;
 
-    await next();
-  };
+        await next();
+    };
 };
