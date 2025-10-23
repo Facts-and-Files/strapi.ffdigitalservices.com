@@ -1,6 +1,14 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
+import { Book } from '@strapi/icons';
 import MenuLogo from './extensions/ffds-logo.svg';
 import Favicon from './extensions/favicon.png';
+
+const TimesheetPage = async () => {
+    const component = await import(
+        /* webpackChunkName: "my-custom-page" */ './pages/TimesheetPage'
+    );
+    return component;
+}
 
 export default {
     config: {
@@ -41,6 +49,18 @@ export default {
         auth: {
             logo: MenuLogo
         }
+  },
+  register(app: StrapiApp ) {
+    app.addMenuLink( {
+        to: '/timesheet',
+        icon: Book,
+        intlLabel: {
+            id: 'custom.timesheet',
+            defaultMessage: 'Timesheet'
+        },
+        Component: TimesheetPage,
+        permissions: []
+    } )
   },
   bootstrap(app: StrapiApp) {
     console.log(app);
