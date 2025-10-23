@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Field } from '@strapi/design-system';
+import { Field, Textarea } from '@strapi/design-system';
 
 interface TimesheetCommentProps {
     value: string,
@@ -10,7 +10,7 @@ const TimesheetComment: React.FC< TimesheetCommentProps > = React.memo(
     ( { value, onChange } ) => {
 
         const handleChange = useCallback(
-            ( e: React.ChangeEvent< HTMLInputElement > ) => {
+            ( e: React.ChangeEvent< HTMLTextAreaElement > ) => {
                 onChange( e.target.value );
             },
             [ onChange ]
@@ -19,8 +19,7 @@ const TimesheetComment: React.FC< TimesheetCommentProps > = React.memo(
         return (
             <Field.Root paddingTop={ 4 } paddingBottom={ 4 }>
                 <Field.Label>Comment:</Field.Label>
-                <Field.Input
-                    type="text"
+                <Textarea
                     value={ value }
                     onChange={ handleChange }
                 />
