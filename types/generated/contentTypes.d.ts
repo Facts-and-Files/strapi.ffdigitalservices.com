@@ -762,7 +762,12 @@ export interface ApiTimesheetTimesheet extends Struct.CollectionTypeSchema {
     singularName: 'timesheet';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
   };
   attributes: {
     comment: Schema.Attribute.Text;
