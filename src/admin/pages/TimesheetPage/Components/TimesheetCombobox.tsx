@@ -1,17 +1,45 @@
-import React, { useCallback } from "react";
-import { Combobox, Field } from '@strapi/design-system';
+import React, { useCallback, useEffect, useState } from "react";
+import { Combobox, ComboboxOption, Field } from '@strapi/design-system';
 
 interface TimesheetComboboxProps {
     value: string,
     onChange: ( value: string ) => void
 };
 
+interface Project {
+    id: number,
+    title: string
+}
+
 const TimesheetCombobox: React.FC< TimesheetComboboxProps > = React.memo( 
     ( { value, onChange } ) => {
 
+        const [ allProjects, setAllProjects ] = useState< any | null>( null );
+
+        useEffect( () => {
+            console.log( 'fetching projects' );
+            const fetchData = async () => {
+                try {
+
+                    const req = await fetch( '/api/project-posts' );
+                    if ( ! req.ok ) {
+                        throw new Error( `HTTP error! status: ${req.status}` )
+                    }
+                    const res = await req.json();
+                    
+                    setAllProjects( res.data );
+
+                } catch ( error ) {
+                    console.log( `Error fetching data: ${ error }`);
+                }
+            };
+
+            fetchData();
+        }, [] );
+
         const handleChange = useCallback(
-            ( e: React.ChangeEvent< HTMLInputElement > ) => {
-                onChange( e.target.value );
+            ( value: string ) => {
+                onChange( value );
             },
             [ onChange ]
         );
@@ -21,9 +49,16 @@ const TimesheetCombobox: React.FC< TimesheetComboboxProps > = React.memo(
                 <Field.Label>Project:</Field.Label>
                 <Combobox
                     value={ value }
-                    onChange={ onChange }
+                    onChange={ handleChange }
                 >
-                    <option value="">- Please Select Project</option>
+                    <ComboboxOption value="">
+                        - Please Select Project
+                    </ComboboxOption>
+                    { allProjects?.map( ( project: Project ) => (
+                        <ComboboxOption key={ project.id } value={ project.title }>
+                            { project.title }
+                        </ComboboxOption>
+                    ) ) }
                 </Combobox>
             </Field.Root>
         )
