@@ -754,6 +754,39 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTimesheetTimesheet extends Struct.CollectionTypeSchema {
+  collectionName: 'timesheets';
+  info: {
+    displayName: 'Timesheet';
+    pluralName: 'timesheets';
+    singularName: 'timesheet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comment: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    endTime: Schema.Attribute.Time;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timesheet.timesheet'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    project: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    startTime: Schema.Attribute.Time;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1273,6 +1306,7 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::project-post.project-post': ApiProjectPostProjectPost;
       'api::tag.tag': ApiTagTag;
+      'api::timesheet.timesheet': ApiTimesheetTimesheet;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
