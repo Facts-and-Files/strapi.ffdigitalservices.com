@@ -11,7 +11,7 @@ const TimesheetTime : React.FC< TimesheetTimeProps > = React.memo(
     ( { label, value, onChange } ) => {
 
         const handleChange = useCallback( ( value: string) => {
-            onChange( `${ value }:00.000`);
+            onChange( value );
         }, [ onChange ] );
     
 

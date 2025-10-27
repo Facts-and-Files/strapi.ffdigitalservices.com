@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useFetchClient } from "@strapi/strapi/admin";
-import { Box, Button } from '@strapi/design-system';
+import { Box, Button, Flex, Loader } from '@strapi/design-system';
 import TimesheetDate from "./TimesheetDate";
 import TimesheetTime from "./TimesheetTime";
 import TimesheetComment from "./TimesheetComment";
@@ -10,14 +10,13 @@ import TimesheetCombobox from "./TimesheetCombobox";
 const EntryForm = ( () => {
     const { get, post } = useFetchClient();
 
+    const [ loading, setLoading] = useState< boolean >( false );
     const [ date, setDate ] = useState< string >( '' );
     const [ comment, setComment ] = useState< string >( '' );
-    const [ startTime, setStartTime ] = useState< string >( '' );
-    const [ endTime, setEndTime ] = useState< string >( '' );
+    const [ startTime, setStartTime ] = useState< string >( '08:00' );
+    const [ endTime, setEndTime ] = useState< string >( '17:00' );
     const [ name, setName ] = useState< string >( '' );
     const [ project, setProject ] = useState< string >( '' );
-
-    console.log( 'render entry form ');
 
     const handleDateChange = useCallback( ( value: string ) => {
         setDate( value );
@@ -43,8 +42,19 @@ const EntryForm = ( () => {
         setProject( project );
     }, [] );
 
+    const resetForm = () => {
+        setComment( '' );
+        setDate( '' );
+        setStartTime( '08:00' );
+        setEndTime( '17:00' );
+        setName( '' );
+        setProject( '' );
+    }
+
     const handleFormSubmit = async ( e: React.FormEvent< HTMLFormElement > ) => {
         e.preventDefault();
+
+        setLoading( true );
 
         const userReq = await get( '/admin/users/me' );
         const user = userReq?.data;
@@ -58,8 +68,8 @@ const EntryForm = ( () => {
         const data = {
             "name": name,
             "date": date,
-            "startTime": startTime,
-            "endTime": endTime,
+            "startTime": `${ startTime }:00.000`,
+            "endTime": `${ endTime }:00.000`,
             "project": project,
             "comment": comment,
             "admin_user": user.data,
@@ -72,16 +82,27 @@ const EntryForm = ( () => {
             "comment": comment,
             "date": date,
             "project": project,
-            "startTime": startTime,
-            "endTime": endTime,
+            "startTime": `${ startTime }:00.000`,
+            "endTime": `${ endTime }:00.000`,
             "user": { "id": Number( user.data.id ) }
         });
 
+        setLoading( false );
+
         console.log( res );
+
+        resetForm();
 
         return
     }
 
+    if (loading) {
+        return (
+            <Loader style={{ display: 'flex', justifyContent: 'center' }}>
+                Loading data...
+            </Loader>
+        );
+    }
 
     return (
         <Box padding={ 4 }>
