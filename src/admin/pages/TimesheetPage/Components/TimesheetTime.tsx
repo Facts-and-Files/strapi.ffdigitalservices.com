@@ -21,6 +21,7 @@ const TimesheetTime : React.FC< TimesheetTimeProps > = React.memo(
                 <TimePicker
                     value={ value }
                     onChange={ handleChange }
+                    step={ 15 }
                 />
             </Field.Root>
         )

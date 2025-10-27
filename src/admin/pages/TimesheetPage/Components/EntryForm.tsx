@@ -65,18 +65,6 @@ const EntryForm = ( () => {
             return;
         }
 
-        const data = {
-            "name": name,
-            "date": date,
-            "startTime": `${ startTime }:00.000`,
-            "endTime": `${ endTime }:00.000`,
-            "project": project,
-            "comment": comment,
-            "admin_user": user.data,
-        };
-
-        console.log( data );
-
         const res = await post( 'content-manager/collection-types/api::timesheet.timesheet',{
             "name": name,
             "comment": comment,

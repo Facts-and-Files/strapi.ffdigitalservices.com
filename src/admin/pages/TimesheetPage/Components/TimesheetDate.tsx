@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Field, useTheme } from '@strapi/design-system';
+import { Field } from '@strapi/design-system';
 
 interface TimesheetDateProps {
     name?: string,
