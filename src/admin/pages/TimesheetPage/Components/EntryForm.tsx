@@ -8,7 +8,8 @@ import TimesheetText from "./TimesheetText";
 import TimesheetCombobox from "./TimesheetCombobox";
 
 const EntryForm = ( () => {
-    const { post } = useFetchClient();
+    const { get, post } = useFetchClient();
+
     const [ date, setDate ] = useState< string >( '' );
     const [ comment, setComment ] = useState< string >( '' );
     const [ startTime, setStartTime ] = useState< string >( '' );
@@ -45,13 +46,23 @@ const EntryForm = ( () => {
     const handleFormSubmit = async ( e: React.FormEvent< HTMLFormElement > ) => {
         e.preventDefault();
 
+        const userReq = await get( '/admin/users/me' );
+        const user = userReq?.data;
+
+        console.log( user );
+
+        if ( ! user || ! user.data ) {
+            return;
+        }
+
         const data = {
             "name": name,
             "date": date,
             "startTime": startTime,
             "endTime": endTime,
             "project": project,
-            "comment": comment
+            "comment": comment,
+            "admin_user": user.data,
         };
 
         console.log( data );
@@ -63,6 +74,7 @@ const EntryForm = ( () => {
             "project": project,
             "startTime": startTime,
             "endTime": endTime,
+            "user": { "id": Number( user.data.id ) }
         });
 
         console.log( res );
