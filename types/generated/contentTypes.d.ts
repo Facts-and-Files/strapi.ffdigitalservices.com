@@ -766,7 +766,7 @@ export interface ApiTimesheetTimesheet extends Struct.CollectionTypeSchema {
   };
   pluginOptions: {
     'content-manager': {
-      visible: false;
+      visible: true;
     };
   };
   attributes: {

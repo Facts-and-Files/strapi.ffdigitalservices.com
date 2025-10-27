@@ -7,6 +7,7 @@ import {
     Typography,
 } from '@strapi/design-system';
 import EntryForm from "./Components/EntryForm";
+import ListOfEntries from "./Components/ListOfEntries";
 
 const TimesheetPage: React.FC = () => {
 
@@ -91,6 +92,7 @@ const TimesheetPage: React.FC = () => {
                     <Tabs.Content value="allEntries">
                         <Box padding={4}>
                             <Typography tag="p">All Entries</Typography>
+                            <ListOfEntries />
                         </Box>
                     </Tabs.Content>
 

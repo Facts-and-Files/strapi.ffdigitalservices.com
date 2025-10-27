@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { useFetchClient } from "@strapi/strapi/admin";
 import { Box, Button } from '@strapi/design-system';
 import TimesheetDate from "./TimesheetDate";
 import TimesheetTime from "./TimesheetTime";
@@ -7,7 +8,8 @@ import TimesheetText from "./TimesheetText";
 import TimesheetCombobox from "./TimesheetCombobox";
 
 const EntryForm = ( () => {
-    const [ date, setDate ] = useState<Date | undefined>();
+    const { post } = useFetchClient();
+    const [ date, setDate ] = useState< string >( '' );
     const [ comment, setComment ] = useState< string >( '' );
     const [ startTime, setStartTime ] = useState< string >( '' );
     const [ endTime, setEndTime ] = useState< string >( '' );
@@ -16,7 +18,7 @@ const EntryForm = ( () => {
 
     console.log( 'render entry form ');
 
-    const handleDateChange = useCallback( ( name: string, value?: Date ) => {
+    const handleDateChange = useCallback( ( value: string ) => {
         setDate( value );
     }, [] );
 
@@ -40,19 +42,30 @@ const EntryForm = ( () => {
         setProject( project );
     }, [] );
 
-    const handleFormSubmit = ( e: React.FormEvent< HTMLFormElement > ) => {
+    const handleFormSubmit = async ( e: React.FormEvent< HTMLFormElement > ) => {
         e.preventDefault();
 
         const data = {
-            name: name,
-            date: date,
-            start: startTime,
-            end: endTime,
-            project: project,
-            comment: comment
+            "name": name,
+            "date": date,
+            "startTime": startTime,
+            "endTime": endTime,
+            "project": project,
+            "comment": comment
         };
 
         console.log( data );
+
+        const res = await post( 'content-manager/collection-types/api::timesheet.timesheet',{
+            "name": name,
+            "comment": comment,
+            "date": date,
+            "project": project,
+            "startTime": startTime,
+            "endTime": endTime,
+        });
+
+        console.log( res );
 
         return
     }
