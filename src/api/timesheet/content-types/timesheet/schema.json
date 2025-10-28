@@ -22,13 +22,16 @@
       "type": "string"
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "startTime": {
-      "type": "time"
+      "type": "time",
+      "required": true
     },
     "endTime": {
-      "type": "time"
+      "type": "time",
+      "required": true
     },
     "comment": {
       "type": "text"
@@ -37,6 +40,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
+    },
+    "totalTime": {
+      "type": "decimal"
     }
   }
 }
