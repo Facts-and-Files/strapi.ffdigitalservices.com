@@ -5,15 +5,21 @@ import {
     Accordion,
     IconButton,
     Button,
-    Loader
+    Loader,
+    Dots,
+    NextLink,
+    PageLink,
+    Pagination,
+    PreviousLink
 } from '@strapi/design-system';
 import { Trash } from '@strapi/icons';
-import { useFetchClient } from "@strapi/strapi/admin";
+import { Page, useFetchClient } from "@strapi/strapi/admin";
 import TimesheetText from "./TimesheetText";
 import TimesheetCombobox from "./TimesheetCombobox";
 import TimesheetComment from "./TimesheetComment";
 import TimesheetDate from "./TimesheetDate";
 import TimesheetTime from "./TimesheetTime";
+import TimesheetPagination from "./TimesheetPagination";
 
 interface User {
     id: number,
@@ -37,10 +43,23 @@ interface Entry {
     user: User
 };
 
+interface Pagination {
+    page: number,
+    pageCount: number,
+    pageSize: number,
+    total: number
+}
+
 const ListOfEntries = ( () => {
     const { get, put, del } = useFetchClient();
     const [ entries, setEntries ] = useState< Entry[] >( [] );
     const [ loading, setLoading] = useState< boolean >( false );
+    const [ pagination, setPagination ] = useState< Pagination >( {
+        page: 5,
+        pageCount: 24,
+        pageSize: 0,
+        total: 0
+    } );
 
     const normalizeTimeVal = ( time: string ) => {
         let timeArr = time.split( ':' );
@@ -49,8 +68,13 @@ const ListOfEntries = ( () => {
         return times;
     }
 
-    const fetchData = async () => {
-        const response = await get( 'content-manager/collection-types/api::timesheet.timesheet' );
+    const fetchData = async ( page: number ) => {
+        const response = await get( 'content-manager/collection-types/api::timesheet.timesheet', {
+            params: {
+                page: page,
+                pageSize: 1,
+            }
+        } );
         if ( response && response.data ) {
             const formatted = response.data.results.map( ( entry: Entry ) => ( {
                 ...entry,
@@ -58,13 +82,14 @@ const ListOfEntries = ( () => {
                 endTime: normalizeTimeVal( entry.endTime )
             } ) )
             setEntries( formatted )
+            setPagination( response.data.pagination );
             console.log( response.data );
         }
     }
 
     useEffect( () => {
         const fetchEntries = async () => {
-            await fetchData();
+            await fetchData( 1 );
         }
 
         fetchEntries();
@@ -77,6 +102,11 @@ const ListOfEntries = ( () => {
             )
         )
     };
+
+    const handlePageChange = async ( page: number ) => {
+        await fetchData( page );
+        return;
+    }
 
     const handleFormSubmit = async ( e: React.FormEvent< HTMLFormElement >, index: number ) => {
         e.preventDefault();
@@ -107,7 +137,7 @@ const ListOfEntries = ( () => {
             `content-manager/collection-types/api::timesheet.timesheet/${ id }`
         );
 
-        await fetchData();
+        await fetchData( 1 );
 
         setLoading( false );
         console.log( delReq );
@@ -180,6 +210,11 @@ const ListOfEntries = ( () => {
                 </Accordion.Item>
             ) ) }
             </Accordion.Root>
+            { pagination.pageCount > 1 && (
+                <Box style={ { display: 'flex', justifyContent: 'center', marginTop: '25px' } }>
+                    <TimesheetPagination pagination={ pagination } onChange={ handlePageChange } />
+                </Box>
+            ) }
         </Box>
     )
     
