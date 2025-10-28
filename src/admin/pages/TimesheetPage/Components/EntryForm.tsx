@@ -62,6 +62,10 @@ const EntryForm = ( () => {
             return;
         }
 
+        const end = new Date( `1970-01-01T${ endTime }Z`);
+        const start = new Date( `1970-01-01T${ startTime }Z`);
+        const totalTime = ( end.getTime() - start.getTime() ) / (1000 * 60 * 60);
+
         const res = await post( 'content-manager/collection-types/api::timesheet.timesheet',{
             "name": name,
             "comment": comment,
@@ -69,6 +73,7 @@ const EntryForm = ( () => {
             "project": project,
             "startTime": `${ startTime }:00.000`,
             "endTime": `${ endTime }:00.000`,
+            "totalTime": totalTime.toFixed( 2 ),
             "user": { "id": Number( user.data.id ) }
         } );
 

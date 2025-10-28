@@ -43,20 +43,20 @@ export default {
         auth: {
             logo: MenuLogo
         }
-  },
-  register(app: StrapiApp ) {
-    app.addMenuLink( {
-        to: 'timesheet-managment',
-        icon: Book,
-        intlLabel: {
-            id: 'custom.timesheet',
-            defaultMessage: 'Timesheet'
-        },
-        Component: () => import( './pages/TimesheetPage' ),
-        permissions: []
-    } )
-  },
-  bootstrap(app: StrapiApp) {
-    console.log(app);
-  },
+    },
+    register(app: StrapiApp ) {
+        app.addMenuLink( {
+            to: 'timesheet-managment',
+            icon: Book,
+            intlLabel: {
+                id: 'custom.timesheet',
+                defaultMessage: 'Timesheet'
+            },
+            Component: () => import( './pages/TimesheetPage' ),
+            permissions: []
+        } )
+    },
+    bootstrap(app: StrapiApp) {
+        console.log(app);
+    },
 };

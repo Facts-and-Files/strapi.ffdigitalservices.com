@@ -8,7 +8,7 @@ import {
     Loader,
 } from '@strapi/design-system';
 import { Trash } from '@strapi/icons';
-import { useFetchClient } from "@strapi/strapi/admin";
+import { useFetchClient, Widget } from "@strapi/strapi/admin";
 import TimesheetText from "./TimesheetText";
 import TimesheetCombobox from "./TimesheetCombobox";
 import TimesheetComment from "./TimesheetComment";
@@ -33,6 +33,7 @@ interface Entry {
     date: string,
     startTime: string,
     endTime: string,
+    totalTime: number,
     name: string,
     project: string,
     user: User
@@ -59,6 +60,9 @@ const ListOfEntries = ( () => {
     const [ user, setUser ] = useState< User | null >();
 
     const normalizeTimeVal = ( time: string ) => {
+        if ( ! time || time === '' ) {
+            return '';
+        }
         let timeArr = time.split( ':' );
         let times = `${ timeArr[ 0 ] }:${ timeArr[ 1 ] }`;
         return times;
@@ -173,8 +177,18 @@ const ListOfEntries = ( () => {
             { entries?.map( ( entry: Entry, index: number ) => (
                 <Accordion.Item value={ `${ entry.id }` } key={ entry.id }>
                     <Accordion.Header>
-                        <Accordion.Trigger description="Show Entry">
-                            { entry.name }
+                        <Accordion.Trigger description="Show Entry" style={ { width: '100%' } }>
+                            <span style={ { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr' } }>
+                                <span style={ { paddingInline: '10px' } }>
+                                    { entry.date }
+                                </span>
+                                <span style={ { paddingInline: '10px' } }>
+                                    { entry.startTime } - { entry.endTime }
+                                </span>
+                                <span style={ { paddingInline: '10px' } }>
+                                    { entry.name }
+                                </span>
+                            </span>
                         </Accordion.Trigger>
                         <Accordion.Actions>
                             <IconButton
@@ -188,6 +202,7 @@ const ListOfEntries = ( () => {
                     </Accordion.Header>
                     <Accordion.Content>
                         <Box padding={ 4 }>
+                            <Typography>Total time: { entry.totalTime }h </Typography>
                             <form onSubmit={ ( e ) => handleFormSubmit( e, index ) } >
                                 <TimesheetText
                                     label="Name:"
