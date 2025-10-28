@@ -20,17 +20,15 @@ const TimesheetPagination: React.FC< TimesheetPaginationProps > = ( { pagination
 
     const handleClick = async ( e: React.MouseEvent< HTMLAnchorElement >, page: number ) => {
         e.preventDefault();
-
         onChange( page )
-    
-        console.log( e );
+        return;
     }
     // Determine which pages to show (example: first 2, last 2, current ±1)
     const pages: number[] = [];
 
-    for (let i = 1; i <= pageCount; i++) {
-        if (i <= 2 || i > pageCount - 2 || Math.abs(i - page) <= 1) {
-            pages.push(i);
+    for ( let i = 1; i <= pageCount; i++ ) {
+        if ( i <= 2 || i > pageCount - 2 || Math.abs( i - page ) <= 1 ) {
+            pages.push( i );
         }
     }
 
@@ -44,9 +42,9 @@ const TimesheetPagination: React.FC< TimesheetPaginationProps > = ( { pagination
                 Previous
             </PreviousLink>
 
-            { pages.map((p, i) => {
+            { pages.map( ( p, i ) => {
                 if ( i > 1 && pages[ i - 1 ] + 1 !== p ) {
-                    return <Dots key={`dots-${p}`}>…</Dots>; // gap
+                    return <Dots key={ `dots-${ p }` }>…</Dots>;
                 }
                 return (
                     <PageLink

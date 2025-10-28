@@ -61,18 +61,26 @@ const ListOfEntries = ( () => {
         total: 0
     } );
 
+    const [ user, setUser ] = useState< User | null >();
+
     const normalizeTimeVal = ( time: string ) => {
         let timeArr = time.split( ':' );
         let times = `${ timeArr[ 0 ] }:${ timeArr[ 1 ] }`;
-        console.log( times );
         return times;
     }
 
-    const fetchData = async ( page: number ) => {
+    const fetchData = async ( page: number, userId: number | undefined ) => {
         const response = await get( 'content-manager/collection-types/api::timesheet.timesheet', {
             params: {
                 page: page,
-                pageSize: 1,
+                pageSize: 10,
+                filters: {
+                    user: {
+                        id: {
+                            $eq: userId
+                        }
+                    }
+                }
             }
         } );
         if ( response && response.data ) {
@@ -83,17 +91,29 @@ const ListOfEntries = ( () => {
             } ) )
             setEntries( formatted )
             setPagination( response.data.pagination );
-            console.log( response.data );
         }
     }
 
     useEffect( () => {
+        const fetchUser  = async () => {
+            const userReq = await get( '/admin/users/me' );
+            if ( userReq.data ) {
+                setUser( userReq.data.data );
+            }
+        }
+        fetchUser();
+    }, [] );
+
+    useEffect( () => {
         const fetchEntries = async () => {
-            await fetchData( 1 );
+            console.log( user );
+            await fetchData( 1, user?.id );
         }
 
-        fetchEntries();
-    }, [] );
+        if ( user ) {
+            fetchEntries();
+        }
+    }, [ user ] );
 
     const handleChange = ( id: number, fieldName: string, value: string ) => {
         setEntries( prevEntries =>
@@ -104,7 +124,9 @@ const ListOfEntries = ( () => {
     };
 
     const handlePageChange = async ( page: number ) => {
-        await fetchData( page );
+        if ( user ) {
+            await fetchData( page, user.id );
+        }
         return;
     }
 
@@ -114,8 +136,6 @@ const ListOfEntries = ( () => {
 
         const entry = entries[ index ];
 
-        console.log( entry.startTime );
-
         const res = await put( `content-manager/collection-types/api::timesheet.timesheet/${ entry.documentId }`,{
             "name": entry.name,
             "comment": entry.comment,
@@ -124,9 +144,8 @@ const ListOfEntries = ( () => {
             "startTime": `${ entry.startTime }:00.000`,
             "endTime": `${ entry.endTime }:00.000`,
             "user": { "id": Number( entry.user.id ) }
-        });
+        } );
 
-        console.log( res );
         setLoading( false );
         return null;
     }
@@ -138,10 +157,8 @@ const ListOfEntries = ( () => {
         );
 
         await fetchData( 1 );
-
         setLoading( false );
-        console.log( delReq );
-        return;
+        return null;
     }
 
     if (loading) {
