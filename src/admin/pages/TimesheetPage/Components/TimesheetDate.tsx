@@ -24,7 +24,6 @@ const TimesheetDate: React.FC< TimesheetDateProps > = React.memo(
     ( { name, value, onChange } ) => {
 
         const handleChange = useCallback( ( e: React.ChangeEvent< HTMLInputElement > ) => {
-            console.log( e.target.value );
             onChange( e.target.value );
         }, [ name, onChange ] );
 

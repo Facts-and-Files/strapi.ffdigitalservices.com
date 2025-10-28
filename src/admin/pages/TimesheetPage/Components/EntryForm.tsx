@@ -53,13 +53,10 @@ const EntryForm = ( () => {
 
     const handleFormSubmit = async ( e: React.FormEvent< HTMLFormElement > ) => {
         e.preventDefault();
-
         setLoading( true );
 
         const userReq = await get( '/admin/users/me' );
         const user = userReq?.data;
-
-        console.log( user );
 
         if ( ! user || ! user.data ) {
             return;
@@ -73,12 +70,9 @@ const EntryForm = ( () => {
             "startTime": `${ startTime }:00.000`,
             "endTime": `${ endTime }:00.000`,
             "user": { "id": Number( user.data.id ) }
-        });
+        } );
 
         setLoading( false );
-
-        console.log( res );
-
         resetForm();
 
         return

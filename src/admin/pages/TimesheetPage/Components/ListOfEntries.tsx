@@ -6,14 +6,9 @@ import {
     IconButton,
     Button,
     Loader,
-    Dots,
-    NextLink,
-    PageLink,
-    Pagination,
-    PreviousLink
 } from '@strapi/design-system';
 import { Trash } from '@strapi/icons';
-import { Page, useFetchClient } from "@strapi/strapi/admin";
+import { useFetchClient } from "@strapi/strapi/admin";
 import TimesheetText from "./TimesheetText";
 import TimesheetCombobox from "./TimesheetCombobox";
 import TimesheetComment from "./TimesheetComment";
@@ -106,7 +101,6 @@ const ListOfEntries = ( () => {
 
     useEffect( () => {
         const fetchEntries = async () => {
-            console.log( user );
             await fetchData( 1, user?.id );
         }
 
@@ -152,11 +146,14 @@ const ListOfEntries = ( () => {
 
     const handleDelete = async ( id: string ) => {
         setLoading( true );
-        const delReq = await del(
-            `content-manager/collection-types/api::timesheet.timesheet/${ id }`
-        );
 
-        await fetchData( 1 );
+        if ( user ) {
+            const delReq = await del(
+                `content-manager/collection-types/api::timesheet.timesheet/${ id }`
+            );
+
+            await fetchData( 1, user.id );
+        }
         setLoading( false );
         return null;
     }

@@ -17,7 +17,6 @@ const TimesheetCombobox: React.FC< TimesheetComboboxProps > = React.memo(
         const [ allProjects, setAllProjects ] = useState< any | null>( null );
 
         useEffect( () => {
-            console.log( 'fetching projects' );
             const fetchData = async () => {
                 try {
 
