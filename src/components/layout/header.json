@@ -15,6 +15,15 @@
       "type": "component",
       "component": "shared.link",
       "repeatable": true
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "BG-Background-Primary-Color",
+      "enum": [
+        "BG-Background-Primary-Color",
+        "BG-Primary-Color",
+        "BG-Secondary-Color"
+      ]
     }
   },
   "config": {}

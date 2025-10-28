@@ -176,6 +176,10 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
+    type: Schema.Attribute.Enumeration<
+      ['BG-Background-Primary-Color', 'BG-Primary-Color', 'BG-Secondary-Color']
+    > &
+      Schema.Attribute.DefaultTo<'BG-Primary-Color'>;
   };
 }
 
@@ -188,6 +192,10 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   attributes: {
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
+    type: Schema.Attribute.Enumeration<
+      ['BG-Background-Primary-Color', 'BG-Primary-Color', 'BG-Secondary-Color']
+    > &
+      Schema.Attribute.DefaultTo<'BG-Background-Primary-Color'>;
   };
 }
 

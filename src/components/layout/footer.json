@@ -28,6 +28,15 @@
       "type": "component",
       "component": "blocks.newsletter",
       "repeatable": false
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "BG-Primary-Color",
+      "enum": [
+        "BG-Background-Primary-Color",
+        "BG-Primary-Color",
+        "BG-Secondary-Color"
+      ]
     }
   },
   "config": {}
