@@ -23,9 +23,10 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "PRIMARY",
-        "SECONDARY",
-        "TRANSPARENT"
+        "BG-Primary-Color",
+        "BG-Background-Primary-Color",
+        "BG-Secondary-Color",
+        "BG-Transparent-Color"
       ]
     }
   },
