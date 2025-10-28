@@ -134,6 +134,10 @@ const ListOfEntries = ( () => {
 
         const entry = entries[ index ];
 
+        const end = new Date( `1970-01-01T${ entry.endTime }Z`);
+        const start = new Date( `1970-01-01T${ entry.startTime }Z`);
+        const totalTime = ( end.getTime() - start.getTime() ) / (1000 * 60 * 60);
+
         const res = await put( `content-manager/collection-types/api::timesheet.timesheet/${ entry.documentId }`,{
             "name": entry.name,
             "comment": entry.comment,
@@ -141,6 +145,7 @@ const ListOfEntries = ( () => {
             "project": entry.project,
             "startTime": `${ entry.startTime }:00.000`,
             "endTime": `${ entry.endTime }:00.000`,
+            "totalTime": totalTime.toFixed( 2 ),
             "user": { "id": Number( entry.user.id ) }
         } );
 
