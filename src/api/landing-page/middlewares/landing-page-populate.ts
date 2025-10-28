@@ -23,6 +23,22 @@ const populate = {
                     }
                 }
             },
+            "blocks.hero-with-achievements": {
+                populate: {
+                    image: {
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
+                    },
+                    heroLinks: true,
+                    achievements: true
+                }
+            },
             "blocks.section-heading": true,
             "blocks.card-grid": {
                 populate: {

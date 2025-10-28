@@ -31,7 +31,8 @@
         "blocks.featured-news",
         "blocks.featured-projects",
         "blocks.team",
-        "blocks.featured-partners"
+        "blocks.featured-partners",
+        "blocks.hero-with-achievements"
       ]
     }
   }

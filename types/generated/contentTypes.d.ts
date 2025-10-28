@@ -455,6 +455,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'blocks.faqs',
         'blocks.content-with-image',
         'blocks.card-grid',
+        'blocks.hero-with-achievements',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -570,6 +571,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.featured-projects',
         'blocks.team',
         'blocks.featured-partners',
+        'blocks.hero-with-achievements',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_achievement_cards",
+  "info": {
+    "displayName": "Achievement Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "achievement": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -89,6 +89,27 @@ export interface BlocksHero extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksHeroWithAchievements extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_hero_with_achievements';
+  info: {
+    displayName: 'Hero With Achievements';
+  };
+  attributes: {
+    achievements: Schema.Attribute.Component<'shared.achievement-card', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    heroLinks: Schema.Attribute.Component<'shared.link', true>;
+    image: Schema.Attribute.Media<'images'>;
+    overTitle: Schema.Attribute.String;
+    subTitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksMarkdown extends Struct.ComponentSchema {
   collectionName: 'components_blocks_markdowns';
   info: {
@@ -199,6 +220,18 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAchievementCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_achievement_cards';
+  info: {
+    displayName: 'Achievement Card';
+  };
+  attributes: {
+    achievement: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
@@ -223,7 +256,14 @@ export interface SharedLink extends Struct.ComponentSchema {
     isButtonLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TRANSPARENT']>;
+    type: Schema.Attribute.Enumeration<
+      [
+        'BG-Primary-Color',
+        'BG-Background-Primary-Color',
+        'BG-Secondary-Color',
+        'BG-Transparent-Color',
+      ]
+    >;
   };
 }
 
@@ -251,6 +291,7 @@ declare module '@strapi/strapi' {
       'blocks.featured-partners': BlocksFeaturedPartners;
       'blocks.featured-projects': BlocksFeaturedProjects;
       'blocks.hero': BlocksHero;
+      'blocks.hero-with-achievements': BlocksHeroWithAchievements;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
       'blocks.person-card': BlocksPersonCard;
@@ -259,6 +300,7 @@ declare module '@strapi/strapi' {
       'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
+      'shared.achievement-card': SharedAchievementCard;
       'shared.card': SharedCard;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
