@@ -48,6 +48,13 @@ const populate = {
                         }
                     },
                     link: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
                 }
             },
             "blocks.content-with-image": {

@@ -9,6 +9,7 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
   attributes: {
     cards: Schema.Attribute.Component<'shared.card', true>;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     link: Schema.Attribute.Component<'shared.link', false>;
     title: Schema.Attribute.String;
   };
