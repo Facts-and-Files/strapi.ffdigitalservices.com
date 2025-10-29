@@ -136,7 +136,12 @@ const populate = {
                         }
                     }
                 }
-            }
+            },
+            "blocks.quote-grid": {
+                populate: {
+                    quotes: true,
+                }
+            },
         }
     }
 }

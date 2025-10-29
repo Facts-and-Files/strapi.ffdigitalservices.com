@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_quote_grids",
+  "info": {
+    "displayName": "Quote Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "quotes": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -154,6 +154,18 @@ export interface BlocksPersonCard extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksQuoteGrid extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_quote_grids';
+  info: {
+    displayName: 'Quote Grid';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    quotes: Schema.Attribute.Component<'shared.quote', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksSectionHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_section_headings';
   info: {
@@ -289,6 +301,17 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedQuote extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+  };
+  attributes: {
+    source: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -303,6 +326,7 @@ declare module '@strapi/strapi' {
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
       'blocks.person-card': BlocksPersonCard;
+      'blocks.quote-grid': BlocksQuoteGrid;
       'blocks.section-heading': BlocksSectionHeading;
       'blocks.team': BlocksTeam;
       'layout.banner': LayoutBanner;
@@ -312,6 +336,7 @@ declare module '@strapi/strapi' {
       'shared.card': SharedCard;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
+      'shared.quote': SharedQuote;
     }
   }
 }
