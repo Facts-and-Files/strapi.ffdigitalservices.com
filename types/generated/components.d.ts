@@ -43,6 +43,7 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
   };
   attributes: {
     faq: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
   };
 }
 
@@ -268,11 +269,8 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'shared.link', false>;
-    overHeading: Schema.Attribute.String;
   };
 }
 

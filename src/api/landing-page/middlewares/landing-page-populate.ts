@@ -93,7 +93,14 @@ const populate = {
             },
             "blocks.faqs": {
                 populate: {
-                    faq: true
+                    faq: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
                 }
             },
             "blocks.newsletter": true,
