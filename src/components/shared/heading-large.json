@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_heading_larges",
+  "info": {
+    "displayName": "Heading Large"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "headingStyle": {
+      "type": "component",
+      "component": "shared.text-style",
+      "repeatable": false
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "subHeadingStyle": {
+      "type": "component",
+      "component": "shared.text-style",
+      "repeatable": false
+    },
+    "overHeading": {
+      "type": "string"
+    },
+    "overHeadingStyle": {
+      "type": "component",
+      "component": "shared.text-style",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

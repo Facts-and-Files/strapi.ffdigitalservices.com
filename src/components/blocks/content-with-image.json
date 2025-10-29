@@ -10,7 +10,9 @@
       "default": false
     },
     "heading": {
-      "type": "string"
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
     },
     "content": {
       "type": "richtext"

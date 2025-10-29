@@ -23,7 +23,7 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
     cardDescription: Schema.Attribute.Text;
     cardTitle: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
     isReversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.Component<'shared.link', false>;
@@ -61,6 +61,14 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
     displayName: 'Featured Partners';
   };
   attributes: {
+    alignHeading: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
+    alignText: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
+    colorHeading: Schema.Attribute.Enumeration<
+      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE']
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE', 'GRAY']
+    >;
     description: Schema.Attribute.Text;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
     title: Schema.Attribute.String;
@@ -172,7 +180,13 @@ export interface BlocksSectionHeading extends Struct.ComponentSchema {
     displayName: 'Section Heading';
   };
   attributes: {
+    alignHeading: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
+      Schema.Attribute.DefaultTo<'LEFT'>;
     anchorLink: Schema.Attribute.String;
+    colorHeading: Schema.Attribute.Enumeration<
+      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
   };
@@ -265,6 +279,32 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHeadingLarge extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heading_larges';
+  info: {
+    displayName: 'Heading Large';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+    overHeading: Schema.Attribute.String;
+    overHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+    subHeading: Schema.Attribute.String;
+    subHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+  };
+}
+
+export interface SharedHeadingSmall extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heading_smalls';
+  info: {
+    displayName: 'Heading Small';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -312,6 +352,27 @@ export interface SharedQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTextStyle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_styles';
+  info: {
+    displayName: 'Text Style';
+  };
+  attributes: {
+    align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
+      Schema.Attribute.DefaultTo<'LEFT'>;
+    color: Schema.Attribute.Enumeration<
+      ['BLACK', 'WHITE', 'GRAY', 'PRIMARY', 'SECONDARY']
+    >;
+    italic: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL', 'XXL']> &
+      Schema.Attribute.DefaultTo<'M'>;
+    weight: Schema.Attribute.Enumeration<
+      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD']
+    > &
+      Schema.Attribute.DefaultTo<'NORMAL'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -334,9 +395,12 @@ declare module '@strapi/strapi' {
       'layout.header': LayoutHeader;
       'shared.achievement-card': SharedAchievementCard;
       'shared.card': SharedCard;
+      'shared.heading-large': SharedHeadingLarge;
+      'shared.heading-small': SharedHeadingSmall;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
       'shared.quote': SharedQuote;
+      'shared.text-style': SharedTextStyle;
     }
   }
 }

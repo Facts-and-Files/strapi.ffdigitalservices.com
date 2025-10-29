@@ -61,6 +61,13 @@ const populate = {
                             "width",
                             "caption"
                         ]
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
                     }
                 }
             },

@@ -5,13 +5,13 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "achievement": {
       "type": "string"
     },
     "label": {
+      "type": "string"
+    },
+    "title": {
       "type": "string"
     }
   },
