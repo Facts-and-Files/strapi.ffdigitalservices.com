@@ -41,7 +41,12 @@ const populate = {
             "blocks.section-heading": true,
             "blocks.card-grid": {
                 populate: {
-                    cards: true
+                    cards: {
+                        populate: {
+                            link:true
+                        }
+                    },
+                    link: true,
                 }
             },
             "blocks.content-with-image": {

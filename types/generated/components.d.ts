@@ -8,6 +8,9 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
   };
   attributes: {
     cards: Schema.Attribute.Component<'shared.card', true>;
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.Component<'shared.link', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -246,6 +249,7 @@ export interface SharedCard extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'shared.link', false>;
+    overHeading: Schema.Attribute.String;
   };
 }
 
