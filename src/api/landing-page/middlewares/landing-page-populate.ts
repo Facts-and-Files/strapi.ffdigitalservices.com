@@ -146,6 +146,13 @@ const populate = {
                                 fields: ["alternativeText", "url", "caption"]
                             }
                         }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
                     }
                 }
             },

@@ -62,6 +62,15 @@
           ]
         }
       }
+    },
+    "colorCardTitle": {
+      "type": "enumeration",
+      "enum": [
+        "BLACK",
+        "WHITE",
+        "PRIMARY",
+        "SECONDARY"
+      ]
     }
   },
   "config": {}

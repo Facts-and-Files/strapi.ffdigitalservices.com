@@ -16,40 +16,10 @@
       "component": "shared.logo-link",
       "repeatable": true
     },
-    "alignHeading": {
-      "type": "enumeration",
-      "enum": [
-        "LEFT",
-        "CENTER",
-        "RIGHT"
-      ]
-    },
-    "colorHeading": {
-      "type": "enumeration",
-      "enum": [
-        "PRIMARY",
-        "SECONDARY",
-        "BLACK",
-        "WHITE"
-      ]
-    },
-    "alignText": {
-      "type": "enumeration",
-      "enum": [
-        "LEFT",
-        "CENTER",
-        "RIGHT"
-      ]
-    },
-    "colorText": {
-      "type": "enumeration",
-      "enum": [
-        "PRIMARY",
-        "SECONDARY",
-        "BLACK",
-        "WHITE",
-        "GRAY"
-      ]
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
     }
   },
   "config": {}

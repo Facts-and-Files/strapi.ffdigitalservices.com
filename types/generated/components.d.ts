@@ -22,6 +22,9 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
   attributes: {
     cardDescription: Schema.Attribute.Text;
     cardTitle: Schema.Attribute.String;
+    colorCardTitle: Schema.Attribute.Enumeration<
+      ['BLACK', 'WHITE', 'PRIMARY', 'SECONDARY']
+    >;
     content: Schema.Attribute.RichText;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
@@ -61,15 +64,8 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
     displayName: 'Featured Partners';
   };
   attributes: {
-    alignHeading: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
-    alignText: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
-    colorHeading: Schema.Attribute.Enumeration<
-      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE']
-    >;
-    colorText: Schema.Attribute.Enumeration<
-      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE', 'GRAY']
-    >;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
     title: Schema.Attribute.String;
   };
