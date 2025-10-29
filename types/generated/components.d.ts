@@ -17,11 +17,15 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
     displayName: 'Content With Image';
   };
   attributes: {
+    cardDescription: Schema.Attribute.Text;
+    cardTitle: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     isReversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.Component<'shared.link', false>;
+    type: Schema.Attribute.Enumeration<['Regular Image', 'Card Image']> &
+      Schema.Attribute.DefaultTo<'Regular Image'>;
   };
 }
 

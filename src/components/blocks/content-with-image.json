@@ -26,6 +26,40 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "Regular Image",
+      "enum": [
+        "Regular Image",
+        "Card Image"
+      ]
+    },
+    "cardTitle": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "Card Image"
+          ]
+        }
+      }
+    },
+    "cardDescription": {
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "Card Image"
+          ]
+        }
+      }
     }
   },
   "config": {}
