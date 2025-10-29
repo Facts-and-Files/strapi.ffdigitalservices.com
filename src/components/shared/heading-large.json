@@ -28,6 +28,9 @@
       "type": "component",
       "component": "shared.text-style",
       "repeatable": false
+    },
+    "anchorLink": {
+      "type": "string"
     }
   },
   "config": {}

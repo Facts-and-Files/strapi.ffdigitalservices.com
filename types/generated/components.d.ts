@@ -282,6 +282,7 @@ export interface SharedHeadingLarge extends Struct.ComponentSchema {
     displayName: 'Heading Large';
   };
   attributes: {
+    anchorLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
     overHeading: Schema.Attribute.String;
@@ -297,6 +298,7 @@ export interface SharedHeadingSmall extends Struct.ComponentSchema {
     displayName: 'Heading Small';
   };
   attributes: {
+    anchorLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
   };
