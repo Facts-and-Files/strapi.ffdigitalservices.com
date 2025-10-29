@@ -80,6 +80,7 @@ export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     projectPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::project-post.project-post'

@@ -138,6 +138,13 @@ const populate = {
                                 ]
                             }
                         }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
                     }
                 }
             },

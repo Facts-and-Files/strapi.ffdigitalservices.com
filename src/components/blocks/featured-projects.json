@@ -15,6 +15,11 @@
     },
     "description": {
       "type": "text"
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
     }
   },
   "config": {}
