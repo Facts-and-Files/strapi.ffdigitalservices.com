@@ -53,6 +53,7 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
     displayName: 'Featured News';
   };
   attributes: {
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     newsPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::news-post.news-post'
@@ -270,6 +271,7 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
+    heading: Schema.Attribute.Component<'shared.heading-small', false>;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'shared.link', false>;
   };

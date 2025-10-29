@@ -120,7 +120,14 @@ const populate = {
                             },
                             author: true,
                         }
-                    }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
                 }
             },
             "blocks.featured-projects": {

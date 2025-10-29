@@ -43,7 +43,7 @@ const populate = {
                 populate: {
                     cards: {
                         populate: {
-                            link:true
+                            link: true
                         }
                     },
                     link: true,
@@ -108,7 +108,14 @@ const populate = {
                             },
                             author: true,
                         }
-                    }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
                 }
             },
             "blocks.featured-projects": {

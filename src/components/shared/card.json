@@ -16,6 +16,11 @@
       "type": "component",
       "component": "shared.link",
       "repeatable": false
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
     }
   },
   "config": {}
