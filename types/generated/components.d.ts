@@ -271,9 +271,11 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
-    heading: Schema.Attribute.Component<'shared.heading-small', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'shared.link', false>;
+    overHeading: Schema.Attribute.String;
   };
 }
 

@@ -17,10 +17,14 @@
       "component": "shared.link",
       "repeatable": false
     },
+    "overHeading": {
+      "type": "string"
+    },
     "heading": {
-      "type": "component",
-      "component": "shared.heading-small",
-      "repeatable": false
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}
