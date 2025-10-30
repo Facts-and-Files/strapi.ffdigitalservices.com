@@ -14,7 +14,8 @@ const populate = {
             "width",
             "caption"
         ]
-    }
+    },
+    heading: true,
 };
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {

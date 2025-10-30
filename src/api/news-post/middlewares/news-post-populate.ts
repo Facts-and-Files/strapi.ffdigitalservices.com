@@ -20,12 +20,17 @@ const populate = {
             image: {
                 fields: ["alternativeText", "url", "caption"]
             },
-            news_posts: {
+            newsPosts: {
                 fields: ["documentId", "title"]
             }
         }
     },
-    contentTags: true
+    contentTags: true,
+    heading: {
+        populate: {
+            headingStyle: true,
+        }
+    }
 };
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
