@@ -613,6 +613,7 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     featuredImage: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.Component<'shared.heading-small', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -714,6 +715,7 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     externalUrl: Schema.Attribute.String;
+    heading: Schema.Attribute.Component<'shared.heading-small', false>;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

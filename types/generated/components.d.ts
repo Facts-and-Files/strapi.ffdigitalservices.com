@@ -97,7 +97,7 @@ export interface BlocksHero extends Struct.ComponentSchema {
     icon: 'archive';
   };
   attributes: {
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
     links: Schema.Attribute.Component<'shared.link', true>;
     text: Schema.Attribute.RichText;
@@ -117,6 +117,7 @@ export interface BlocksHeroWithAchievements extends Struct.ComponentSchema {
         },
         number
       >;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     heroLinks: Schema.Attribute.Component<'shared.link', true>;
     image: Schema.Attribute.Media<'images'>;
     overTitle: Schema.Attribute.String;
@@ -169,6 +170,7 @@ export interface BlocksQuoteGrid extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     quotes: Schema.Attribute.Component<'shared.quote', true>;
     title: Schema.Attribute.String;
   };
@@ -199,6 +201,7 @@ export interface BlocksTeam extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     teamMembers: Schema.Attribute.Component<'blocks.person-card', true>;
     text: Schema.Attribute.String;
   };

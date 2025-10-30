@@ -41,6 +41,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tag.tag"
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
     }
   }
 }

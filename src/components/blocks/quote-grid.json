@@ -15,6 +15,11 @@
       "type": "component",
       "component": "shared.quote",
       "repeatable": true
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
     }
   },
   "config": {}

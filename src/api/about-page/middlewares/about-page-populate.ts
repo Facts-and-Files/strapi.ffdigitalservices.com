@@ -19,7 +19,14 @@ const populate = {
                             "width",
                             "caption"
                         ]
-                    }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
                 }
             },
             "blocks.hero-with-achievements": {
@@ -35,7 +42,14 @@ const populate = {
                         ]
                     },
                     heroLinks: true,
-                    achievements: true
+                    achievements: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
                 }
             },
             "blocks.section-heading": true,
@@ -107,6 +121,7 @@ const populate = {
                                 ]
                             },
                             author: true,
+                            heading: true,
                         }
                     },
                     heading: {
@@ -151,6 +166,13 @@ const populate = {
                                 fields: ["alternativeText", "url", "caption"]
                             }
                         }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
                     }
                 }
             },
@@ -175,6 +197,13 @@ const populate = {
             "blocks.quote-grid": {
                 populate: {
                     quotes: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
                 }
             },
         }
