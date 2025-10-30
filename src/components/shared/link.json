@@ -28,6 +28,54 @@
         "BG-Secondary-Color",
         "BG-Transparent-Color"
       ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "BG-PRIMARY",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "hoverBackground": {
+      "type": "enumeration",
+      "default": "BG-SECONDARY",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "hoverText": {
+      "type": "enumeration",
+      "default": "SECONDARY",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
     }
   },
   "config": {}

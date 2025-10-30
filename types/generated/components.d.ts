@@ -228,15 +228,25 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     icon: 'rocket';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
     newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
-    type: Schema.Attribute.Enumeration<
-      ['BG-Background-Primary-Color', 'BG-Primary-Color', 'BG-Secondary-Color']
-    > &
-      Schema.Attribute.DefaultTo<'BG-Primary-Color'>;
   };
 }
 
@@ -247,12 +257,22 @@ export interface LayoutHeader extends Struct.ComponentSchema {
     icon: 'rocket';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
-    type: Schema.Attribute.Enumeration<
-      ['BG-Background-Primary-Color', 'BG-Primary-Color', 'BG-Secondary-Color']
-    > &
-      Schema.Attribute.DefaultTo<'BG-Background-Primary-Color'>;
   };
 }
 
@@ -263,7 +283,58 @@ export interface SharedAchievementCard extends Struct.ComponentSchema {
   };
   attributes: {
     achievement: Schema.Attribute.String;
+    colorBackground: Schema.Attribute.Enumeration<
+      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    hoverBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    >;
+    hoverText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    >;
     label: Schema.Attribute.String;
+    opacityBackground: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 10;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<100>;
     title: Schema.Attribute.String;
   };
 }
@@ -317,6 +388,38 @@ export interface SharedLink extends Struct.ComponentSchema {
     icon: 'link';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BG-PRIMARY'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BG-SECONDARY'>;
+    hoverText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    > &
+      Schema.Attribute.DefaultTo<'SECONDARY'>;
     href: Schema.Attribute.String;
     isButtonLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;

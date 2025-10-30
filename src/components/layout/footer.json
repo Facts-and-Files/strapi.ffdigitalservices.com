@@ -29,13 +29,25 @@
       "component": "blocks.newsletter",
       "repeatable": false
     },
-    "type": {
+    "colorBackground": {
       "type": "enumeration",
-      "default": "BG-Primary-Color",
       "enum": [
-        "BG-Background-Primary-Color",
-        "BG-Primary-Color",
-        "BG-Secondary-Color"
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
       ]
     }
   },
