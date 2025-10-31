@@ -25,6 +25,36 @@
     },
     "description": {
       "type": "text"
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorHeading": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
     }
   },
   "config": {}

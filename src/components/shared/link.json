@@ -20,15 +20,6 @@
       "type": "boolean",
       "default": false
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "BG-Primary-Color",
-        "BG-Background-Primary-Color",
-        "BG-Secondary-Color",
-        "BG-Transparent-Color"
-      ]
-    },
     "colorBackground": {
       "type": "enumeration",
       "default": "BG-PRIMARY",
@@ -60,7 +51,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-ALT",
         "SECONDARY",
+        "SECONDARY-ALT",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]

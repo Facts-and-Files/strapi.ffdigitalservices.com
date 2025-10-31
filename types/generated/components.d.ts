@@ -345,6 +345,23 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorHeading: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
@@ -410,7 +427,9 @@ export interface SharedLink extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-ALT',
         'SECONDARY',
+        'SECONDARY-ALT',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -424,14 +443,6 @@ export interface SharedLink extends Struct.ComponentSchema {
     isButtonLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<
-      [
-        'BG-Primary-Color',
-        'BG-Background-Primary-Color',
-        'BG-Secondary-Color',
-        'BG-Transparent-Color',
-      ]
-    >;
   };
 }
 
@@ -455,6 +466,34 @@ export interface SharedQuote extends Struct.ComponentSchema {
     displayName: 'Quote';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'PRIMARY'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     source: Schema.Attribute.String;
     text: Schema.Attribute.Text;
   };

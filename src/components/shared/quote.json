@@ -10,6 +10,42 @@
     },
     "source": {
       "type": "string"
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBorder": {
+      "type": "enumeration",
+      "default": "PRIMARY",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
     }
   },
   "config": {}
