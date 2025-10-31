@@ -65,9 +65,57 @@
     },
     "colorCardTitle": {
       "type": "enumeration",
+      "default": "BLACK",
       "enum": [
         "BLACK",
         "WHITE",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorCardBg": {
+      "type": "enumeration",
+      "default": "WHITE",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorCardBorder": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
         "PRIMARY",
         "SECONDARY"
       ]

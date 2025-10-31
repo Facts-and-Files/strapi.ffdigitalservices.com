@@ -8,6 +8,18 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
   };
   attributes: {
     cards: Schema.Attribute.Component<'shared.card', true>;
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     link: Schema.Attribute.Component<'shared.link', false>;
@@ -23,9 +35,42 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
   attributes: {
     cardDescription: Schema.Attribute.Text;
     cardTitle: Schema.Attribute.String;
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorCardBg: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'WHITE'>;
+    colorCardBorder: Schema.Attribute.Enumeration<
+      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     colorCardTitle: Schema.Attribute.Enumeration<
       ['BLACK', 'WHITE', 'PRIMARY', 'SECONDARY']
-    >;
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     content: Schema.Attribute.RichText;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
@@ -42,6 +87,18 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
     displayName: 'Faqs';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     faq: Schema.Attribute.Component<'shared.card', true>;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
   };

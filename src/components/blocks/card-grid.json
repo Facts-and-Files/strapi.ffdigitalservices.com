@@ -26,6 +26,19 @@
       "type": "component",
       "component": "shared.heading-large",
       "repeatable": false
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
     }
   },
   "config": {}
