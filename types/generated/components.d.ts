@@ -110,6 +110,18 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
     displayName: 'Featured News';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     newsPosts: Schema.Attribute.Relation<
       'oneToMany',
@@ -124,6 +136,18 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
     displayName: 'Featured Partners';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
@@ -137,6 +161,18 @@ export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
     displayName: 'Featured Projects';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     projectPosts: Schema.Attribute.Relation<
@@ -257,6 +293,18 @@ export interface BlocksTeam extends Struct.ComponentSchema {
     displayName: 'Team';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     teamMembers: Schema.Attribute.Component<'blocks.person-card', true>;
