@@ -31,7 +31,9 @@
         "blocks.featured-news",
         "blocks.faqs",
         "blocks.content-with-image",
-        "blocks.card-grid"
+        "blocks.card-grid",
+        "blocks.hero-with-achievements",
+        "blocks.quote-grid"
       ]
     }
   }

@@ -19,13 +19,55 @@ const populate = {
                             "width",
                             "caption"
                         ]
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
+                }
+            },
+            "blocks.hero-with-achievements": {
+                populate: {
+                    image: {
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
+                    },
+                    heroLinks: true,
+                    achievements: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
                     }
                 }
             },
             "blocks.section-heading": true,
             "blocks.card-grid": {
                 populate: {
-                    cards: true
+                    cards: {
+                        populate: {
+                            link: true
+                        }
+                    },
+                    link: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
                 }
             },
             "blocks.content-with-image": {
@@ -40,6 +82,13 @@ const populate = {
                             "width",
                             "caption"
                         ]
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
                     }
                 }
             },
@@ -72,8 +121,16 @@ const populate = {
                                 ]
                             },
                             author: true,
+                            heading: true,
                         }
-                    }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
                 }
             },
             "blocks.featured-projects": {
@@ -91,6 +148,13 @@ const populate = {
                                 ]
                             }
                         }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
                     }
                 }
             },
@@ -101,6 +165,13 @@ const populate = {
                             image: {
                                 fields: ["alternativeText", "url", "caption"]
                             }
+                        }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
                         }
                     }
                 }
@@ -113,9 +184,28 @@ const populate = {
                                 fields: ["alternativeText", "url", "caption"]
                             }
                         }
+                    },
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
                     }
                 }
-            }
+            },
+            "blocks.quote-grid": {
+                populate: {
+                    quotes: true,
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    }
+                }
+            },
         }
     }
 }

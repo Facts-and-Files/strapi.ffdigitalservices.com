@@ -9,6 +9,24 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::news-post.news-post"
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
     }
   },
   "config": {}

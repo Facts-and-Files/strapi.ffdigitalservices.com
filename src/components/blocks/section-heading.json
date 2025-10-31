@@ -13,6 +13,25 @@
     },
     "anchorLink": {
       "type": "string"
+    },
+    "alignHeading": {
+      "type": "enumeration",
+      "default": "LEFT",
+      "enum": [
+        "LEFT",
+        "CENTER",
+        "RIGHT"
+      ]
+    },
+    "colorHeading": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY",
+        "BLACK",
+        "WHITE"
+      ]
     }
   },
   "config": {}

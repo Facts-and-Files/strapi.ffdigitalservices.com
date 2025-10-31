@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_shared_text_styles",
+  "info": {
+    "displayName": "Text Style"
+  },
+  "options": {},
+  "attributes": {
+    "align": {
+      "type": "enumeration",
+      "default": "LEFT",
+      "enum": [
+        "LEFT",
+        "CENTER",
+        "RIGHT"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "BLACK",
+        "WHITE",
+        "GRAY",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "weight": {
+      "type": "enumeration",
+      "default": "NORMAL",
+      "enum": [
+        "EXTRA LIGHT",
+        "LIGHT",
+        "NORMAL",
+        "SEMIBOLD",
+        "BOLD"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "default": "M",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
+    },
+    "italic": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

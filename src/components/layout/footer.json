@@ -28,6 +28,27 @@
       "type": "component",
       "component": "blocks.newsletter",
       "repeatable": false
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
     }
   },
   "config": {}

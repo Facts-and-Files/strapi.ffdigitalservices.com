@@ -15,6 +15,27 @@
       "type": "component",
       "component": "shared.link",
       "repeatable": true
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
     }
   },
   "config": {}

@@ -10,7 +10,9 @@
       "default": false
     },
     "heading": {
-      "type": "string"
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
     },
     "content": {
       "type": "richtext"
@@ -25,6 +27,97 @@
       "multiple": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "Regular Image",
+      "enum": [
+        "Regular Image",
+        "Card Image"
+      ]
+    },
+    "cardTitle": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "Card Image"
+          ]
+        }
+      }
+    },
+    "cardDescription": {
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "Card Image"
+          ]
+        }
+      }
+    },
+    "colorCardTitle": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "BLACK",
+        "WHITE",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorCardBg": {
+      "type": "enumeration",
+      "default": "WHITE",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorCardBorder": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
       ]
     }
   },

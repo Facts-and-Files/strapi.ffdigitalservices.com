@@ -1,41 +1,31 @@
 {
-  "collectionName": "components_shared_links",
+  "collectionName": "components_shared_achievement_cards",
   "info": {
-    "displayName": "Link",
-    "icon": "link"
+    "displayName": "Achievement Card"
   },
   "options": {},
   "attributes": {
-    "href": {
+    "achievement": {
       "type": "string"
     },
     "label": {
       "type": "string"
     },
-    "isExternal": {
-      "type": "boolean",
-      "default": false
-    },
-    "isButtonLink": {
-      "type": "boolean",
-      "default": false
+    "title": {
+      "type": "string"
     },
     "colorBackground": {
       "type": "enumeration",
-      "default": "BG-PRIMARY",
       "enum": [
         "TRANSPARENT",
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY",
-        "BG-PRIMARY",
-        "BG-SECONDARY"
+        "SECONDARY"
       ]
     },
     "colorText": {
       "type": "enumeration",
-      "default": "BLACK",
       "enum": [
         "WHITE",
         "BLACK",
@@ -43,9 +33,37 @@
         "SECONDARY"
       ]
     },
+    "opacityBackground": {
+      "type": "integer",
+      "default": 100,
+      "min": 10,
+      "max": 100
+    },
     "hoverBackground": {
       "type": "enumeration",
-      "default": "BG-SECONDARY",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "hoverText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
+    },
+    "colorBorder": {
+      "type": "enumeration",
       "enum": [
         "TRANSPARENT",
         "WHITE",
@@ -53,15 +71,13 @@
         "PRIMARY",
         "PRIMARY-ALT",
         "SECONDARY",
-        "SECONDARY-ALT",
-        "BG-PRIMARY",
-        "BG-SECONDARY"
+        "SECONDARY-ALT"
       ]
     },
-    "hoverText": {
+    "hoverBorder": {
       "type": "enumeration",
-      "default": "SECONDARY",
       "enum": [
+        "TRANSPARENT",
         "WHITE",
         "BLACK",
         "PRIMARY",

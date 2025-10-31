@@ -10,6 +10,35 @@
       "type": "component",
       "component": "shared.card",
       "repeatable": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
     }
   },
   "config": {}

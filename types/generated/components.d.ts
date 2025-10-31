@@ -8,6 +8,22 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
   };
   attributes: {
     cards: Schema.Attribute.Component<'shared.card', true>;
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+    link: Schema.Attribute.Component<'shared.link', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -17,11 +33,51 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
     displayName: 'Content With Image';
   };
   attributes: {
+    cardDescription: Schema.Attribute.Text;
+    cardTitle: Schema.Attribute.String;
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorCardBg: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'WHITE'>;
+    colorCardBorder: Schema.Attribute.Enumeration<
+      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorCardTitle: Schema.Attribute.Enumeration<
+      ['BLACK', 'WHITE', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     content: Schema.Attribute.RichText;
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
     isReversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.Component<'shared.link', false>;
+    type: Schema.Attribute.Enumeration<['Regular Image', 'Card Image']> &
+      Schema.Attribute.DefaultTo<'Regular Image'>;
   };
 }
 
@@ -31,7 +87,20 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
     displayName: 'Faqs';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     faq: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
   };
 }
 
@@ -41,6 +110,19 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
     displayName: 'Featured News';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     newsPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::news-post.news-post'
@@ -54,7 +136,20 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
     displayName: 'Featured Partners';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
     title: Schema.Attribute.String;
   };
@@ -66,7 +161,20 @@ export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
     displayName: 'Featured Projects';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     projectPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::project-post.project-post'
@@ -82,10 +190,32 @@ export interface BlocksHero extends Struct.ComponentSchema {
     icon: 'archive';
   };
   attributes: {
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     image: Schema.Attribute.Media<'images'>;
     links: Schema.Attribute.Component<'shared.link', true>;
     text: Schema.Attribute.RichText;
+  };
+}
+
+export interface BlocksHeroWithAchievements extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_hero_with_achievements';
+  info: {
+    displayName: 'Hero With Achievements';
+  };
+  attributes: {
+    achievements: Schema.Attribute.Component<'shared.achievement-card', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+    heroLinks: Schema.Attribute.Component<'shared.link', true>;
+    image: Schema.Attribute.Media<'images'>;
+    overTitle: Schema.Attribute.String;
+    subTitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -126,13 +256,32 @@ export interface BlocksPersonCard extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksQuoteGrid extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_quote_grids';
+  info: {
+    displayName: 'Quote Grid';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+    quotes: Schema.Attribute.Component<'shared.quote', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksSectionHeading extends Struct.ComponentSchema {
   collectionName: 'components_blocks_section_headings';
   info: {
     displayName: 'Section Heading';
   };
   attributes: {
+    alignHeading: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
+      Schema.Attribute.DefaultTo<'LEFT'>;
     anchorLink: Schema.Attribute.String;
+    colorHeading: Schema.Attribute.Enumeration<
+      ['PRIMARY', 'SECONDARY', 'BLACK', 'WHITE']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
   };
@@ -144,7 +293,20 @@ export interface BlocksTeam extends Struct.ComponentSchema {
     displayName: 'Team';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
     teamMembers: Schema.Attribute.Component<'blocks.person-card', true>;
     text: Schema.Attribute.String;
   };
@@ -171,6 +333,20 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     icon: 'rocket';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
     newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
@@ -186,8 +362,85 @@ export interface LayoutHeader extends Struct.ComponentSchema {
     icon: 'rocket';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
+  };
+}
+
+export interface SharedAchievementCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_achievement_cards';
+  info: {
+    displayName: 'Achievement Card';
+  };
+  attributes: {
+    achievement: Schema.Attribute.String;
+    colorBackground: Schema.Attribute.Enumeration<
+      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    hoverBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    >;
+    hoverText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    >;
+    label: Schema.Attribute.String;
+    opacityBackground: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 10;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<100>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -197,10 +450,56 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorHeading: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'shared.link', false>;
+    overHeading: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHeadingLarge extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heading_larges';
+  info: {
+    displayName: 'Heading Large';
+  };
+  attributes: {
+    anchorLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+    overHeading: Schema.Attribute.String;
+    overHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+    subHeading: Schema.Attribute.String;
+    subHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
+  };
+}
+
+export interface SharedHeadingSmall extends Struct.ComponentSchema {
+  collectionName: 'components_shared_heading_smalls';
+  info: {
+    displayName: 'Heading Small';
+  };
+  attributes: {
+    anchorLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    headingStyle: Schema.Attribute.Component<'shared.text-style', false>;
   };
 }
 
@@ -211,11 +510,44 @@ export interface SharedLink extends Struct.ComponentSchema {
     icon: 'link';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BG-PRIMARY'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BG-SECONDARY'>;
+    hoverText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    > &
+      Schema.Attribute.DefaultTo<'SECONDARY'>;
     href: Schema.Attribute.String;
     isButtonLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TRANSPARENT']>;
   };
 }
 
@@ -233,6 +565,66 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedQuote extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+  };
+  attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'PRIMARY'>;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    source: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedTextStyle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_styles';
+  info: {
+    displayName: 'Text Style';
+  };
+  attributes: {
+    align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
+      Schema.Attribute.DefaultTo<'LEFT'>;
+    color: Schema.Attribute.Enumeration<
+      ['BLACK', 'WHITE', 'GRAY', 'PRIMARY', 'SECONDARY']
+    >;
+    italic: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL', 'XXL']> &
+      Schema.Attribute.DefaultTo<'M'>;
+    weight: Schema.Attribute.Enumeration<
+      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD']
+    > &
+      Schema.Attribute.DefaultTo<'NORMAL'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -243,17 +635,24 @@ declare module '@strapi/strapi' {
       'blocks.featured-partners': BlocksFeaturedPartners;
       'blocks.featured-projects': BlocksFeaturedProjects;
       'blocks.hero': BlocksHero;
+      'blocks.hero-with-achievements': BlocksHeroWithAchievements;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
       'blocks.person-card': BlocksPersonCard;
+      'blocks.quote-grid': BlocksQuoteGrid;
       'blocks.section-heading': BlocksSectionHeading;
       'blocks.team': BlocksTeam;
       'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
+      'shared.achievement-card': SharedAchievementCard;
       'shared.card': SharedCard;
+      'shared.heading-large': SharedHeadingLarge;
+      'shared.heading-small': SharedHeadingSmall;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
+      'shared.quote': SharedQuote;
+      'shared.text-style': SharedTextStyle;
     }
   }
 }

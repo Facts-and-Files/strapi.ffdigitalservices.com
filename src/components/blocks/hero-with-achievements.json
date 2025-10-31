@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_hero_with_achievements",
+  "info": {
+    "displayName": "Hero With Achievements"
+  },
+  "options": {},
+  "attributes": {
+    "overTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "heroLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "achievements": {
+      "type": "component",
+      "component": "shared.achievement-card",
+      "repeatable": true,
+      "max": 4
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

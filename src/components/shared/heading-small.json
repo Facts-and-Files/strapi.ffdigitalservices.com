@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_heading_smalls",
+  "info": {
+    "displayName": "Heading Small"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "headingStyle": {
+      "type": "component",
+      "component": "shared.text-style",
+      "repeatable": false
+    },
+    "anchorLink": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
