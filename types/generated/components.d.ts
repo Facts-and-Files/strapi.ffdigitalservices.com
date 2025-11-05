@@ -312,6 +312,24 @@ export interface BlocksTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTranscirbathonProgress extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_transcirbathon_progresses';
+  info: {
+    displayName: 'Transcribathon Progress';
+  };
+  attributes: {
+    achievements: Schema.Attribute.Component<'shared.card', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    backgroundImage: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+  };
+}
+
 export interface LayoutBanner extends Struct.ComponentSchema {
   collectionName: 'components_layout_banners';
   info: {
@@ -643,6 +661,7 @@ declare module '@strapi/strapi' {
       'blocks.quote-grid': BlocksQuoteGrid;
       'blocks.section-heading': BlocksSectionHeading;
       'blocks.team': BlocksTeam;
+      'blocks.transcirbathon-progress': BlocksTranscirbathonProgress;
       'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;

@@ -33,7 +33,8 @@
         "blocks.content-with-image",
         "blocks.card-grid",
         "blocks.hero-with-achievements",
-        "blocks.quote-grid"
+        "blocks.quote-grid",
+        "blocks.transcirbathon-progress"
       ]
     }
   }

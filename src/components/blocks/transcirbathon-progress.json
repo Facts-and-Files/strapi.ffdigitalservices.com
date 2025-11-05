@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_transcirbathon_progresses",
+  "info": {
+    "displayName": "Transcribathon Progress"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    },
+    "achievements": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true,
+      "max": 5
+    }
+  },
+  "config": {}
+}
