@@ -49,6 +49,11 @@
         "PRIMARY",
         "SECONDARY"
       ]
+    },
+    "logo": {
+      "type": "component",
+      "component": "shared.logo-link",
+      "repeatable": false
     }
   },
   "config": {}
