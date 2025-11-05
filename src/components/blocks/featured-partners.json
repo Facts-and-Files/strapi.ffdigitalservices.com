@@ -33,6 +33,11 @@
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
     }
   },
   "config": {}

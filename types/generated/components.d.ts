@@ -148,6 +148,7 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    cta: Schema.Attribute.Component<'shared.link', false>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
@@ -325,6 +326,18 @@ export interface BlocksTranscribathonProgress extends Struct.ComponentSchema {
         },
         number
       >;
+    backgroundColor: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     backgroundImage: Schema.Attribute.Media<'images'>;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
   };

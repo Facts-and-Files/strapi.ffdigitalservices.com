@@ -191,7 +191,8 @@ const populate = {
                             subHeadingStyle: true,
                             overHeadingStyle: true,
                         }
-                    }
+                    },
+                    cta: true
                 }
             },
             "blocks.quote-grid": {

@@ -22,6 +22,19 @@
       "component": "shared.achievement-card",
       "repeatable": true,
       "max": 5
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
     }
   },
   "config": {}
