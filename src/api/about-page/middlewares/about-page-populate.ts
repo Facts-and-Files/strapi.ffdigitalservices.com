@@ -197,7 +197,13 @@ const populate = {
             },
             "blocks.quote-grid": {
                 populate: {
-                    quotes: true,
+                    quotes: {
+                        populate: {
+                            sourceImage: {
+                                fields: ["alternativeText", "url"]
+                            }
+                        }
+                    },
                     heading: {
                         populate: {
                             headingStyle: true,
