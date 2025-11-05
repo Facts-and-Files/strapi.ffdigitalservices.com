@@ -20,6 +20,14 @@
       "type": "component",
       "component": "shared.heading-large",
       "repeatable": false
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "PRIMARY",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY"
+      ]
     }
   },
   "config": {}

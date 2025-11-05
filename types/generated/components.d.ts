@@ -267,6 +267,8 @@ export interface BlocksQuoteGrid extends Struct.ComponentSchema {
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     quotes: Schema.Attribute.Component<'shared.quote', true>;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']> &
+      Schema.Attribute.DefaultTo<'PRIMARY'>;
   };
 }
 
@@ -520,8 +522,6 @@ export interface SharedHeadingLarge extends Struct.ComponentSchema {
     overHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
     subHeading: Schema.Attribute.String;
     subHeadingStyle: Schema.Attribute.Component<'shared.text-style', false>;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']> &
-      Schema.Attribute.DefaultTo<'PRIMARY'>;
   };
 }
 
