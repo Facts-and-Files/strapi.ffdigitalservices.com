@@ -218,6 +218,28 @@ const populate = {
                     }
                 }
             },
+            "blocks.transcribathon-progress": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
+                    },
+                    achievements: true,
+                    backgroundImage: {
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
+                    }
+                }
+            }
         }
     }
 }

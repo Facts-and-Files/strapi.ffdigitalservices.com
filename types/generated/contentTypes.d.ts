@@ -457,7 +457,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'blocks.card-grid',
         'blocks.hero-with-achievements',
         'blocks.quote-grid',
-        'blocks.transcirbathon-progress',
+        'blocks.transcribathon-progress',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -575,7 +575,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.featured-partners',
         'blocks.hero-with-achievements',
         'blocks.quote-grid',
-        'blocks.transcirbathon-progress',
+        'blocks.transcribathon-progress',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

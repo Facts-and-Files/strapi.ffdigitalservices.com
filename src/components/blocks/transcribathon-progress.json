@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_blocks_transcirbathon_progresses",
+  "collectionName": "components_blocks_transcribathon_progresses",
   "info": {
     "displayName": "Transcribathon Progress"
   },
@@ -19,7 +19,7 @@
     },
     "achievements": {
       "type": "component",
-      "component": "shared.card",
+      "component": "shared.achievement-card",
       "repeatable": true,
       "max": 5
     }
