@@ -33,6 +33,7 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
     displayName: 'Contact Form';
   };
   attributes: {
+    anchor: Schema.Attribute.String;
     colorBackground: Schema.Attribute.Enumeration<
       [
         'TRANSPARENT',

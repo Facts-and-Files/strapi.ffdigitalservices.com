@@ -126,6 +126,9 @@
         "SECONDARY",
         "SECONDARY-ALT"
       ]
+    },
+    "anchor": {
+      "type": "string"
     }
   },
   "config": {}
