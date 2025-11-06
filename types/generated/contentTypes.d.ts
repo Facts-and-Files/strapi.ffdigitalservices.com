@@ -541,7 +541,7 @@ export interface ApiContactMessageContactMessage
     > &
       Schema.Attribute.Private;
     message: Schema.Attribute.Text;
-    phoneNumber: Schema.Attribute.Integer;
+    phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

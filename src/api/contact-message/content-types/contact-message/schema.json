@@ -19,11 +19,11 @@
       "type": "email",
       "required": true
     },
-    "phoneNumber": {
-      "type": "integer"
-    },
     "message": {
       "type": "text"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }
