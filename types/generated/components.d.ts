@@ -128,6 +128,18 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
       'oneToMany',
       'api::news-post.news-post'
     >;
+    postBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
   };
 }
 
