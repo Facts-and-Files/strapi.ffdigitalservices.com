@@ -457,6 +457,8 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'blocks.card-grid',
         'blocks.hero-with-achievements',
         'blocks.quote-grid',
+        'blocks.transcribathon-progress',
+        'blocks.contact-form',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -512,6 +514,38 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiContactMessageContactMessage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_messages';
+  info: {
+    displayName: 'Contact Message';
+    pluralName: 'contact-messages';
+    singularName: 'contact-message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    fullName: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-message.contact-message'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -574,6 +608,8 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.featured-partners',
         'blocks.hero-with-achievements',
         'blocks.quote-grid',
+        'blocks.transcribathon-progress',
+        'blocks.contact-form',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1255,7 +1291,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1312,6 +1347,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::author.author': ApiAuthorAuthor;
+      'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::news-post.news-post': ApiNewsPostNewsPost;

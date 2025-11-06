@@ -34,6 +34,13 @@ const populate = {
             },
             legalLinks: true,
             newsletter: true,
+            logo: {
+                populate: {
+                    image: {
+                        fields: ["alternativeText", "url"]
+                    }
+                }
+            }
         }
     }
 };

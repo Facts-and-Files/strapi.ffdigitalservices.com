@@ -33,7 +33,9 @@
         "blocks.team",
         "blocks.featured-partners",
         "blocks.hero-with-achievements",
-        "blocks.quote-grid"
+        "blocks.quote-grid",
+        "blocks.transcribathon-progress",
+        "blocks.contact-form"
       ]
     }
   }

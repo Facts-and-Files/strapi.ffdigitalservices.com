@@ -1,27 +1,29 @@
 {
-  "collectionName": "components_blocks_featured_partners",
+  "collectionName": "components_blocks_transcribathon_progresses",
   "info": {
-    "displayName": "Featured Partners"
+    "displayName": "Transcribathon Progress"
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "partners": {
-      "type": "component",
-      "component": "shared.logo-link",
-      "repeatable": true
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "heading": {
       "type": "component",
       "component": "shared.heading-large",
       "repeatable": false
     },
-    "colorBackground": {
+    "achievements": {
+      "type": "component",
+      "component": "shared.achievement-card",
+      "repeatable": true,
+      "max": 5
+    },
+    "backgroundColor": {
       "type": "enumeration",
       "default": "TRANSPARENT",
       "enum": [
@@ -33,11 +35,6 @@
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
-    },
-    "cta": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": false
     }
   },
   "config": {}

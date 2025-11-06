@@ -20,6 +20,27 @@
       "type": "component",
       "component": "shared.heading-large",
       "repeatable": false
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "PRIMARY",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
     }
   },
   "config": {}

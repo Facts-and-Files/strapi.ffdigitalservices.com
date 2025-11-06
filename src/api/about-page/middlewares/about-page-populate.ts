@@ -131,6 +131,7 @@ const populate = {
                             overHeadingStyle: true,
                         }
                     },
+                    cta: true,
                 }
             },
             "blocks.featured-projects": {
@@ -191,12 +192,19 @@ const populate = {
                             subHeadingStyle: true,
                             overHeadingStyle: true,
                         }
-                    }
+                    },
+                    cta: true
                 }
             },
             "blocks.quote-grid": {
                 populate: {
-                    quotes: true,
+                    quotes: {
+                        populate: {
+                            sourceImage: {
+                                fields: ["alternativeText", "url"]
+                            }
+                        }
+                    },
                     heading: {
                         populate: {
                             headingStyle: true,
@@ -206,6 +214,29 @@ const populate = {
                     }
                 }
             },
+            "blocks.transcribathon-progress": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
+                    },
+                    achievements: true,
+                    backgroundImage: {
+                        fields: [
+                            "alternativeText",
+                            "url",
+                            "formats",
+                            "height",
+                            "width",
+                            "caption"
+                        ]
+                    }
+                }
+            },
+            "blocks.contact-form": true,
         }
     }
 }

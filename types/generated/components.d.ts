@@ -27,6 +27,98 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_contact_forms';
+  info: {
+    displayName: 'Contact Form';
+  };
+  attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundBtn: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundLeft: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundRight: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorHeadingLeft: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextBtn: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextLeft: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextRight: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    hoverBackgroundBtn: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    hoverTextBtn: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksContentWithImage extends Struct.ComponentSchema {
   collectionName: 'components_blocks_content_with_images';
   info: {
@@ -122,11 +214,24 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    cta: Schema.Attribute.Component<'shared.link', false>;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     newsPosts: Schema.Attribute.Relation<
       'oneToMany',
       'api::news-post.news-post'
     >;
+    postBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
   };
 }
 
@@ -148,6 +253,7 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    cta: Schema.Attribute.Component<'shared.link', false>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     partners: Schema.Attribute.Component<'shared.logo-link', true>;
@@ -262,10 +368,24 @@ export interface BlocksQuoteGrid extends Struct.ComponentSchema {
     displayName: 'Quote Grid';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     quotes: Schema.Attribute.Component<'shared.quote', true>;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']> &
+      Schema.Attribute.DefaultTo<'PRIMARY'>;
   };
 }
 
@@ -312,6 +432,36 @@ export interface BlocksTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTranscribathonProgress extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_transcribathon_progresses';
+  info: {
+    displayName: 'Transcribathon Progress';
+  };
+  attributes: {
+    achievements: Schema.Attribute.Component<'shared.achievement-card', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    backgroundColor: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    backgroundImage: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+  };
+}
+
 export interface LayoutBanner extends Struct.ComponentSchema {
   collectionName: 'components_layout_banners';
   info: {
@@ -348,6 +498,7 @@ export interface LayoutFooter extends Struct.ComponentSchema {
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     >;
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
+    logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
     newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
@@ -600,6 +751,8 @@ export interface SharedQuote extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'BLACK'>;
     source: Schema.Attribute.String;
+    sourceImage: Schema.Attribute.Media<'images'>;
+    sourceInstitution: Schema.Attribute.String;
     text: Schema.Attribute.Text;
   };
 }
@@ -629,6 +782,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.card-grid': BlocksCardGrid;
+      'blocks.contact-form': BlocksContactForm;
       'blocks.content-with-image': BlocksContentWithImage;
       'blocks.faqs': BlocksFaqs;
       'blocks.featured-news': BlocksFeaturedNews;
@@ -642,6 +796,7 @@ declare module '@strapi/strapi' {
       'blocks.quote-grid': BlocksQuoteGrid;
       'blocks.section-heading': BlocksSectionHeading;
       'blocks.team': BlocksTeam;
+      'blocks.transcribathon-progress': BlocksTranscribathonProgress;
       'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
