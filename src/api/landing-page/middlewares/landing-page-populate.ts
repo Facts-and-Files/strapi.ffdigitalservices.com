@@ -247,7 +247,8 @@ const populate = {
                         ]
                     }
                 }
-            }
+            },
+            "blocks.contact-form": true
         }
     }
 }
