@@ -122,6 +122,7 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    cta: Schema.Attribute.Component<'shared.link', false>;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     newsPosts: Schema.Attribute.Relation<
       'oneToMany',
@@ -263,6 +264,18 @@ export interface BlocksQuoteGrid extends Struct.ComponentSchema {
     displayName: 'Quote Grid';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'shared.heading-large', false>;
     quotes: Schema.Attribute.Component<'shared.quote', true>;

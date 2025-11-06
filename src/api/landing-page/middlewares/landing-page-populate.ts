@@ -143,6 +143,7 @@ const populate = {
                             overHeadingStyle: true,
                         }
                     },
+                    cta: true,
                 }
             },
             "blocks.featured-projects": {
