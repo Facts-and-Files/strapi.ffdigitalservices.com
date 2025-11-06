@@ -7,6 +7,125 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorBackgroundLeft": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorHeadingLeft": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorTextLeft": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackgroundRight": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorTextRight": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackgroundBtn": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "hoverBackgroundBtn": {
+      "type": "enumeration",
+      "default": "TRANSPARENT",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorTextBtn": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "hoverTextBtn": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
     }
   },
   "config": {}

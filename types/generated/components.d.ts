@@ -33,6 +33,88 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
     displayName: 'Contact Form';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundBtn: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundLeft: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorBackgroundRight: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    colorHeadingLeft: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextBtn: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextLeft: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorTextRight: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    hoverBackgroundBtn: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'TRANSPARENT'>;
+    hoverTextBtn: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     name: Schema.Attribute.String;
   };
 }
