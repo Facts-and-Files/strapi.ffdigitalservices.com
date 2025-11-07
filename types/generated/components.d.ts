@@ -14,7 +14,9 @@ export interface BlocksCardGrid extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -40,7 +42,9 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -64,7 +68,9 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -76,7 +82,9 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -134,7 +142,9 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -146,7 +156,9 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -186,7 +198,9 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -209,7 +223,9 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -227,7 +243,9 @@ export interface BlocksFeaturedNews extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -248,7 +266,9 @@ export interface BlocksFeaturedPartners extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -274,7 +294,9 @@ export interface BlocksFeaturedProjects extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -375,7 +397,9 @@ export interface BlocksQuoteGrid extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -420,7 +444,9 @@ export interface BlocksTeam extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -452,7 +478,9 @@ export interface BlocksTranscribathonProgress extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -490,7 +518,9 @@ export interface LayoutFooter extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -520,7 +550,9 @@ export interface LayoutHeader extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -541,7 +573,15 @@ export interface SharedAchievementCard extends Struct.ComponentSchema {
   attributes: {
     achievement: Schema.Attribute.String;
     colorBackground: Schema.Attribute.Enumeration<
-      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'SECONDARY',
+        'SECONDARY-HALF',
+      ]
     >;
     colorBorder: Schema.Attribute.Enumeration<
       [
@@ -608,7 +648,9 @@ export interface SharedCard extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -668,7 +710,9 @@ export interface SharedLink extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -729,7 +773,9 @@ export interface SharedQuote extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]

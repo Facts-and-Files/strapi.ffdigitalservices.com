@@ -29,7 +29,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-HALF",
         "SECONDARY",
+        "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
