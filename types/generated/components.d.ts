@@ -840,10 +840,12 @@ export interface SharedTextStyle extends Struct.ComponentSchema {
       ['BLACK', 'WHITE', 'GRAY', 'PRIMARY', 'SECONDARY']
     >;
     italic: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL', 'XXL']> &
+    size: Schema.Attribute.Enumeration<
+      ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+    > &
       Schema.Attribute.DefaultTo<'M'>;
     weight: Schema.Attribute.Enumeration<
-      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD']
+      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD', 'EXTRABOLD']
     > &
       Schema.Attribute.DefaultTo<'NORMAL'>;
   };
