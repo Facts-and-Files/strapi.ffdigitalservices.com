@@ -718,6 +718,17 @@ export interface SharedLink extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'BG-PRIMARY'>;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     colorText: Schema.Attribute.Enumeration<
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     > &
@@ -736,6 +747,19 @@ export interface SharedLink extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'BG-SECONDARY'>;
+    hoverBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     hoverText: Schema.Attribute.Enumeration<
       ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
     > &
