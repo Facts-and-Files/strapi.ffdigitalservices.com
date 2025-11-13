@@ -778,6 +778,32 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'SECONDARY',
+        'SECONDARY-HALF',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     href: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
