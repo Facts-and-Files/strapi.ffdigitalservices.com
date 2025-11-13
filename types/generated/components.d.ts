@@ -718,6 +718,17 @@ export interface SharedLink extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'BG-PRIMARY'>;
+    colorBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'SECONDARY',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     colorText: Schema.Attribute.Enumeration<
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     > &
@@ -736,6 +747,19 @@ export interface SharedLink extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'BG-SECONDARY'>;
+    hoverBorder: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     hoverText: Schema.Attribute.Enumeration<
       ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
     > &
@@ -754,6 +778,32 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'SECONDARY',
+        'SECONDARY-HALF',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    hoverBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     href: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -816,10 +866,12 @@ export interface SharedTextStyle extends Struct.ComponentSchema {
       ['BLACK', 'WHITE', 'GRAY', 'PRIMARY', 'SECONDARY']
     >;
     italic: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL', 'XXL']> &
+    size: Schema.Attribute.Enumeration<
+      ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+    > &
       Schema.Attribute.DefaultTo<'M'>;
     weight: Schema.Attribute.Enumeration<
-      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD']
+      ['EXTRA LIGHT', 'LIGHT', 'NORMAL', 'SEMIBOLD', 'BOLD', 'EXTRABOLD']
     > &
       Schema.Attribute.DefaultTo<'NORMAL'>;
   };
