@@ -35,6 +35,7 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
     displayName: 'Contact Form';
   };
   attributes: {
+    address: Schema.Attribute.Text;
     anchor: Schema.Attribute.String;
     colorBackground: Schema.Attribute.Enumeration<
       [
@@ -90,10 +91,6 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
-    colorHeadingLeft: Schema.Attribute.Enumeration<
-      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
-    > &
-      Schema.Attribute.DefaultTo<'BLACK'>;
     colorTextBtn: Schema.Attribute.Enumeration<
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     > &
@@ -106,6 +103,7 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     > &
       Schema.Attribute.DefaultTo<'BLACK'>;
+    contactMail: Schema.Attribute.String;
     hoverBackgroundBtn: Schema.Attribute.Enumeration<
       [
         'TRANSPARENT',
@@ -124,7 +122,11 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
       ['WHITE', 'BLACK', 'PRIMARY', 'PRIMARY-ALT', 'SECONDARY', 'SECONDARY-ALT']
     > &
       Schema.Attribute.DefaultTo<'BLACK'>;
+    leftDescription: Schema.Attribute.Text;
+    leftHeading: Schema.Attribute.Component<'shared.heading-small', false>;
     name: Schema.Attribute.String;
+    phoneNumber: Schema.Attribute.String;
+    rightHeading: Schema.Attribute.Component<'shared.heading-small', false>;
   };
 }
 
