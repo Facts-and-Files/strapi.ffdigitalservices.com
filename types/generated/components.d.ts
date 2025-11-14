@@ -533,7 +533,6 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
-    newsletter: Schema.Attribute.Component<'blocks.newsletter', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
   };

@@ -24,11 +24,6 @@
       "component": "shared.link",
       "repeatable": true
     },
-    "newsletter": {
-      "type": "component",
-      "component": "blocks.newsletter",
-      "repeatable": false
-    },
     "colorBackground": {
       "type": "enumeration",
       "enum": [
