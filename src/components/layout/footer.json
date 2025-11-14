@@ -6,6 +6,11 @@
   },
   "options": {},
   "attributes": {
+    "navItemsHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
     "navItems": {
       "type": "component",
       "component": "shared.link",
@@ -19,7 +24,22 @@
     "text": {
       "type": "text"
     },
+    "legalLinksHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
     "legalLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "platformLinksHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
+    "platformLinks": {
       "type": "component",
       "component": "shared.link",
       "repeatable": true

@@ -531,8 +531,18 @@ export interface LayoutFooter extends Struct.ComponentSchema {
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     >;
     legalLinks: Schema.Attribute.Component<'shared.link', true>;
+    legalLinksHeading: Schema.Attribute.Component<
+      'shared.heading-small',
+      false
+    >;
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     navItems: Schema.Attribute.Component<'shared.link', true>;
+    navItemsHeading: Schema.Attribute.Component<'shared.heading-small', false>;
+    platformLinks: Schema.Attribute.Component<'shared.link', true>;
+    platformLinksHeading: Schema.Attribute.Component<
+      'shared.heading-small',
+      false
+    >;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
   };

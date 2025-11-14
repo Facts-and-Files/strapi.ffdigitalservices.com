@@ -24,6 +24,11 @@ const populate = {
     },
     footer: {
         populate: {
+            navItemsHeading: {
+                populate: {
+                    headingStyle: true,
+                },
+            },
             navItems: true,
             socialLinks: {
                 populate: {
@@ -32,6 +37,11 @@ const populate = {
                     }
                 },
             },
+            legalLinksHeading: {
+                populate: {
+                    headingStyle: true,
+                }
+            },
             legalLinks: true,
             logo: {
                 populate: {
@@ -39,7 +49,13 @@ const populate = {
                         fields: ["alternativeText", "url"]
                     }
                 }
-            }
+            },
+            platformLinksHeading: {
+                populate: {
+                    headingStyle: true,
+                },
+            },
+            platformLinks: true,
         }
     }
 };
