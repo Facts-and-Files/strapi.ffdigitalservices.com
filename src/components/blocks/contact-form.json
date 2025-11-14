@@ -8,6 +8,28 @@
     "name": {
       "type": "string"
     },
+    "leftHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
+    "leftDescription": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "contactMail": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "rightHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
     "colorBackground": {
       "type": "enumeration",
       "default": "TRANSPARENT",
@@ -36,16 +58,6 @@
         "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
-      ]
-    },
-    "colorHeadingLeft": {
-      "type": "enumeration",
-      "default": "BLACK",
-      "enum": [
-        "WHITE",
-        "BLACK",
-        "PRIMARY",
-        "SECONDARY"
       ]
     },
     "colorTextLeft": {

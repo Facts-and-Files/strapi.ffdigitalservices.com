@@ -248,7 +248,20 @@ const populate = {
                     }
                 }
             },
-            "blocks.contact-form": true
+            "blocks.contact-form": {
+                populate: {
+                    leftHeading: {
+                        populate: {
+                            headingStyle: true,
+                        }
+                    },
+                    rightHeading: {
+                        populate: {
+                            headingStyle: true,
+                        }
+                    }
+                }
+            }
         }
     }
 }

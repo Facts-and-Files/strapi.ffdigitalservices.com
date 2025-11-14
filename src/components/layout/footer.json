@@ -6,6 +6,11 @@
   },
   "options": {},
   "attributes": {
+    "navItemsHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
     "navItems": {
       "type": "component",
       "component": "shared.link",
@@ -19,15 +24,25 @@
     "text": {
       "type": "text"
     },
+    "legalLinksHeading": {
+      "type": "component",
+      "component": "shared.heading-small",
+      "repeatable": false
+    },
     "legalLinks": {
       "type": "component",
       "component": "shared.link",
       "repeatable": true
     },
-    "newsletter": {
+    "platformLinksHeading": {
       "type": "component",
-      "component": "blocks.newsletter",
+      "component": "shared.heading-small",
       "repeatable": false
+    },
+    "platformLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
     },
     "colorBackground": {
       "type": "enumeration",
