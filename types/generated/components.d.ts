@@ -582,7 +582,8 @@ export interface SharedAchievementCard extends Struct.ComponentSchema {
     displayName: 'Achievement Card';
   };
   attributes: {
-    achievement: Schema.Attribute.String;
+    achievementNumber: Schema.Attribute.String;
+    achievementUnit: Schema.Attribute.String;
     colorBackground: Schema.Attribute.Enumeration<
       [
         'TRANSPARENT',

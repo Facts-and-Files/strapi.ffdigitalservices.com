@@ -5,9 +5,6 @@
   },
   "options": {},
   "attributes": {
-    "achievement": {
-      "type": "string"
-    },
     "label": {
       "type": "string"
     },
@@ -87,6 +84,12 @@
         "SECONDARY",
         "SECONDARY-ALT"
       ]
+    },
+    "achievementNumber": {
+      "type": "string"
+    },
+    "achievementUnit": {
+      "type": "string"
     }
   },
   "config": {}
