@@ -103,7 +103,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-HALF",
         "SECONDARY",
+        "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
@@ -116,8 +118,10 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-HALF",
         "PRIMARY-ALT",
         "SECONDARY",
+        "SECONDARY-HALF",
         "SECONDARY-ALT",
         "BG-PRIMARY",
         "BG-SECONDARY"
@@ -147,6 +151,18 @@
     },
     "anchor": {
       "type": "string"
+    },
+    "linkWeight": {
+      "type": "enumeration",
+      "enum": [
+        "EXTRALIGHT",
+        "LIGHT",
+        "NORMAL",
+        "MEDIUM",
+        "SEMIBOLD",
+        "BOLD",
+        "EXTRABOLD"
+      ]
     }
   },
   "config": {}

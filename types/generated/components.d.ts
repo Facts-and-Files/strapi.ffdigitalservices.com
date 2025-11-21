@@ -57,7 +57,9 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -110,8 +112,10 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'PRIMARY-ALT',
         'SECONDARY',
+        'SECONDARY-HALF',
         'SECONDARY-ALT',
         'BG-PRIMARY',
         'BG-SECONDARY',
@@ -124,6 +128,17 @@ export interface BlocksContactForm extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'BLACK'>;
     leftDescription: Schema.Attribute.Text;
     leftHeading: Schema.Attribute.Component<'shared.heading-small', false>;
+    linkWeight: Schema.Attribute.Enumeration<
+      [
+        'EXTRALIGHT',
+        'LIGHT',
+        'NORMAL',
+        'MEDIUM',
+        'SEMIBOLD',
+        'BOLD',
+        'EXTRABOLD',
+      ]
+    >;
     name: Schema.Attribute.String;
     phoneNumber: Schema.Attribute.String;
     rightHeading: Schema.Attribute.Component<'shared.heading-small', false>;
@@ -167,7 +182,15 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'WHITE'>;
     colorCardBorder: Schema.Attribute.Enumeration<
-      ['TRANSPARENT', 'WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'SECONDARY',
+        'SECONDARY-HALF',
+      ]
     > &
       Schema.Attribute.DefaultTo<'TRANSPARENT'>;
     colorCardTitle: Schema.Attribute.Enumeration<
@@ -657,7 +680,9 @@ export interface SharedAchievementCard extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -778,7 +803,9 @@ export interface SharedLink extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'SECONDARY',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -787,6 +814,18 @@ export interface SharedLink extends Struct.ComponentSchema {
       ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     > &
       Schema.Attribute.DefaultTo<'BLACK'>;
+    fontWeight: Schema.Attribute.Enumeration<
+      [
+        'EXTRALIGHT',
+        'LIGHT',
+        'NORMAL',
+        'MEDIUM',
+        'SEMIBOLD',
+        'BOLD',
+        'EXTRABOLD',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'NORMAL'>;
     hoverBackground: Schema.Attribute.Enumeration<
       [
         'TRANSPARENT',
@@ -794,8 +833,10 @@ export interface SharedLink extends Struct.ComponentSchema {
         'BLACK',
         'PRIMARY',
         'PRIMARY-ALT',
+        'PRIMARY-HALF',
         'SECONDARY',
         'SECONDARY-ALT',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -808,8 +849,10 @@ export interface SharedLink extends Struct.ComponentSchema {
         'BLACK',
         'PRIMARY',
         'PRIMARY-ALT',
+        'PRIMARY-HALF',
         'SECONDARY',
         'SECONDARY-ALT',
+        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
@@ -851,8 +894,10 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'PRIMARY-ALT',
         'SECONDARY',
+        'SECONDARY-HALF',
         'SECONDARY-ALT',
         'BG-PRIMARY',
         'BG-SECONDARY',
@@ -891,8 +936,10 @@ export interface SharedQuote extends Struct.ComponentSchema {
         'WHITE',
         'BLACK',
         'PRIMARY',
+        'PRIMARY-HALF',
         'PRIMARY-ALT',
         'SECONDARY',
+        'SECONDARY-HALF',
         'SECONDARY-ALT',
       ]
     > &

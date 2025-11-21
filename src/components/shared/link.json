@@ -54,8 +54,10 @@
         "BLACK",
         "PRIMARY",
         "PRIMARY-ALT",
+        "PRIMARY-HALF",
         "SECONDARY",
         "SECONDARY-ALT",
+        "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
@@ -79,7 +81,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-HALF",
         "SECONDARY",
+        "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
@@ -92,10 +96,25 @@
         "BLACK",
         "PRIMARY",
         "PRIMARY-ALT",
+        "PRIMARY-HALF",
         "SECONDARY",
         "SECONDARY-ALT",
+        "SECONDARY-HALF",
         "BG-PRIMARY",
         "BG-SECONDARY"
+      ]
+    },
+    "fontWeight": {
+      "type": "enumeration",
+      "default": "NORMAL",
+      "enum": [
+        "EXTRALIGHT",
+        "LIGHT",
+        "NORMAL",
+        "MEDIUM",
+        "SEMIBOLD",
+        "BOLD",
+        "EXTRABOLD"
       ]
     }
   },

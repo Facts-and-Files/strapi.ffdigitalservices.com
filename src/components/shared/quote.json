@@ -54,8 +54,10 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
+        "PRIMARY-HALF",
         "PRIMARY-ALT",
         "SECONDARY",
+        "SECONDARY-HALF",
         "SECONDARY-ALT"
       ]
     }
