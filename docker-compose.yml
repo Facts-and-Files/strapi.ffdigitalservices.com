@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
-      - ffds_network
+      - tp_backend
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"]
       interval: 10s
@@ -47,7 +47,7 @@ services:
       - node_modules:/srv/app/node_modules  # container-managed modules
       - uploads:/srv/app/public/uploads
     networks:
-      - ffds_network
+      - tp_backend
     depends_on:
       postgres:
         condition: service_healthy
@@ -59,6 +59,6 @@ volumes:
   node_modules:
 
 networks:
-  ffds_network:
+  tp_backend:
     external: true
-    name: ffds_network
+    name: tp_backend
