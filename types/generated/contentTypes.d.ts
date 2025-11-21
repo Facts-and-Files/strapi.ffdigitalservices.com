@@ -582,6 +582,55 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiImpressumPageImpressumPage extends Struct.SingleTypeSchema {
+  collectionName: 'impressum_pages';
+  info: {
+    displayName: 'Impressum Page';
+    pluralName: 'impressum-pages';
+    singularName: 'impressum-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'blocks.transcribathon-progress',
+        'blocks.team',
+        'blocks.section-heading',
+        'blocks.quote-grid',
+        'blocks.person-card',
+        'blocks.newsletter',
+        'blocks.markdown',
+        'blocks.mapbox',
+        'blocks.hero',
+        'blocks.hero-with-achievements',
+        'blocks.featured-projects',
+        'blocks.featured-partners',
+        'blocks.featured-news',
+        'blocks.faqs',
+        'blocks.content-with-image',
+        'blocks.contact-form',
+        'blocks.card-grid',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::impressum-page.impressum-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   collectionName: 'landing_pages';
   info: {
@@ -1351,6 +1400,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::global.global': ApiGlobalGlobal;
+      'api::impressum-page.impressum-page': ApiImpressumPageImpressumPage;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
