@@ -356,19 +356,35 @@ export interface BlocksMapbox extends Struct.ComponentSchema {
     displayName: 'Mapbox';
   };
   attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-HALF',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
     colorMarker: Schema.Attribute.Enumeration<
       [
         'WHITE',
         'BLACK',
         'PRIMARY',
         'PRIMARY-ALT',
-        'PRIMARY-HALF',
         'SECONDARY',
         'SECONDARY-ALT',
-        'SECONDARY-HALF',
         'BG-PRIMARY',
         'BG-SECONDARY',
       ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
     >;
     cta: Schema.Attribute.Component<'shared.link', false>;
     description: Schema.Attribute.Text;

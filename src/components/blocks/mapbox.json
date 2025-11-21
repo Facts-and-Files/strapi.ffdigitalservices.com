@@ -25,10 +25,33 @@
         "BLACK",
         "PRIMARY",
         "PRIMARY-ALT",
-        "PRIMARY-HALF",
         "SECONDARY",
         "SECONDARY-ALT",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-HALF",
+        "PRIMARY-ALT",
+        "SECONDARY",
         "SECONDARY-HALF",
+        "SECONDARY-ALT",
         "BG-PRIMARY",
         "BG-SECONDARY"
       ]
