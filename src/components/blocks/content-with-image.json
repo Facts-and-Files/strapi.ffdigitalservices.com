@@ -96,7 +96,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY"
+        "PRIMARY-HALF",
+        "SECONDARY",
+        "SECONDARY-HALF"
       ]
     },
     "colorBackground": {
