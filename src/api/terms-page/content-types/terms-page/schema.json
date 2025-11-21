@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_pages",
+  "info": {
+    "singularName": "terms-page",
+    "pluralName": "terms-pages",
+    "displayName": "Terms Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.transcribathon-progress",
+        "blocks.team",
+        "blocks.section-heading",
+        "blocks.quote-grid",
+        "blocks.person-card",
+        "blocks.newsletter",
+        "blocks.markdown",
+        "blocks.mapbox",
+        "blocks.hero",
+        "blocks.hero-with-achievements",
+        "blocks.featured-projects",
+        "blocks.featured-partners",
+        "blocks.featured-news",
+        "blocks.faqs",
+        "blocks.content-with-image",
+        "blocks.contact-form",
+        "blocks.card-grid"
+      ]
+    }
+  }
+}
