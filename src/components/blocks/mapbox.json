@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_blocks_mapboxes",
+  "info": {
+    "displayName": "Mapbox"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "colorMarker": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    },
+    "colorText": {
+      "type": "enumeration",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "colorBackground": {
+      "type": "enumeration",
+      "enum": [
+        "TRANSPARENT",
+        "WHITE",
+        "BLACK",
+        "PRIMARY",
+        "PRIMARY-HALF",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-HALF",
+        "SECONDARY-ALT",
+        "BG-PRIMARY",
+        "BG-SECONDARY"
+      ]
+    }
+  },
+  "config": {}
+}

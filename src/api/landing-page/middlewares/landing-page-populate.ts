@@ -261,7 +261,19 @@ const populate = {
                         }
                     }
                 }
-            }
+            },
+            "blocks.mapbox": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
+                    },
+                    cta: true,
+                }
+            },
         }
     }
 }

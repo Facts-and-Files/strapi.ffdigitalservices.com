@@ -350,6 +350,48 @@ export interface BlocksHeroWithAchievements extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksMapbox extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_mapboxes';
+  info: {
+    displayName: 'Mapbox';
+  };
+  attributes: {
+    colorBackground: Schema.Attribute.Enumeration<
+      [
+        'TRANSPARENT',
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-HALF',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-HALF',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorMarker: Schema.Attribute.Enumeration<
+      [
+        'WHITE',
+        'BLACK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+        'BG-PRIMARY',
+        'BG-SECONDARY',
+      ]
+    >;
+    colorText: Schema.Attribute.Enumeration<
+      ['WHITE', 'BLACK', 'PRIMARY', 'SECONDARY']
+    >;
+    cta: Schema.Attribute.Component<'shared.link', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
+  };
+}
+
 export interface BlocksMarkdown extends Struct.ComponentSchema {
   collectionName: 'components_blocks_markdowns';
   info: {
@@ -901,6 +943,7 @@ declare module '@strapi/strapi' {
       'blocks.featured-projects': BlocksFeaturedProjects;
       'blocks.hero': BlocksHero;
       'blocks.hero-with-achievements': BlocksHeroWithAchievements;
+      'blocks.mapbox': BlocksMapbox;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
       'blocks.person-card': BlocksPersonCard;
