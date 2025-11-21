@@ -236,7 +236,32 @@ const populate = {
                     }
                 }
             },
-            "blocks.contact-form": true,
+            "blocks.contact-form": {
+                populate: {
+                    leftHeading: {
+                        populate: {
+                            headingStyle: true,
+                        }
+                    },
+                    rightHeading: {
+                        populate: {
+                            headingStyle: true,
+                        }
+                    }
+                }
+            },
+            "blocks.mapbox": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true
+                        }
+                    },
+                    cta: true,
+                }
+            },
         }
     }
 }

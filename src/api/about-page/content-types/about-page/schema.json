@@ -35,7 +35,8 @@
         "blocks.hero-with-achievements",
         "blocks.quote-grid",
         "blocks.transcribathon-progress",
-        "blocks.contact-form"
+        "blocks.contact-form",
+        "blocks.mapbox"
       ]
     }
   }

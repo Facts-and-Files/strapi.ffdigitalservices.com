@@ -459,6 +459,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
         'blocks.quote-grid',
         'blocks.transcribathon-progress',
         'blocks.contact-form',
+        'blocks.mapbox',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -610,6 +611,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
         'blocks.quote-grid',
         'blocks.transcribathon-progress',
         'blocks.contact-form',
+        'blocks.mapbox',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
