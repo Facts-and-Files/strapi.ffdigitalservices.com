@@ -151,6 +151,7 @@ export interface BlocksContentWithImage extends Struct.ComponentSchema {
     displayName: 'Content With Image';
   };
   attributes: {
+    bulletPoints: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     cardDescription: Schema.Attribute.Text;
     cardTitle: Schema.Attribute.String;
     colorBackground: Schema.Attribute.Enumeration<

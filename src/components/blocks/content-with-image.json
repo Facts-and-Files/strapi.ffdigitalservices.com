@@ -63,6 +63,20 @@
         }
       }
     },
+    "bulletPoints": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "Card Image"
+          ]
+        }
+      },
+      "default": true
+    },
     "colorCardTitle": {
       "type": "enumeration",
       "default": "BLACK",
