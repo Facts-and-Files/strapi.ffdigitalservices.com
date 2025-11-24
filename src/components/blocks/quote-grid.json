@@ -41,7 +41,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     }
   },

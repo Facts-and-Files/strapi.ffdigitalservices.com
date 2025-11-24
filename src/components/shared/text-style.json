@@ -20,6 +20,7 @@
         "BLACK",
         "WHITE",
         "GRAY",
+        "GRAY-DARK",
         "PRIMARY",
         "SECONDARY"
       ]

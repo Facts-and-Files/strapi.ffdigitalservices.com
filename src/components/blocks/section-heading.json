@@ -30,7 +30,9 @@
         "PRIMARY",
         "SECONDARY",
         "BLACK",
-        "WHITE"
+        "WHITE",
+        "GRAY",
+        "GRAY-DARK"
       ]
     }
   },
