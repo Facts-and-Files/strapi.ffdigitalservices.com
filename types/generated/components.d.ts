@@ -461,6 +461,45 @@ export interface BlocksMarkdown extends Struct.ComponentSchema {
     displayName: 'Markdown';
   };
   attributes: {
+    colorHeading: Schema.Attribute.Enumeration<
+      [
+        'WHITE',
+        'BLACK',
+        'GRAY',
+        'GRAY-DARK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorLink: Schema.Attribute.Enumeration<
+      [
+        'WHITE',
+        'BLACK',
+        'GRAY',
+        'GRAY-DARK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
+    colorText: Schema.Attribute.Enumeration<
+      [
+        'WHITE',
+        'BLACK',
+        'GRAY',
+        'GRAY-DARK',
+        'PRIMARY',
+        'PRIMARY-ALT',
+        'SECONDARY',
+        'SECONDARY-ALT',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'BLACK'>;
     content: Schema.Attribute.RichText;
   };
 }
