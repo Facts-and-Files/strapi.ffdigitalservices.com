@@ -37,7 +37,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY"
+        "SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorBackground": {
@@ -53,7 +55,9 @@
         "SECONDARY-HALF",
         "SECONDARY-ALT",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     }
   },

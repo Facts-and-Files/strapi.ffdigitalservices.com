@@ -35,7 +35,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverBackground": {
@@ -51,7 +53,9 @@
         "SECONDARY-HALF",
         "SECONDARY-ALT",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     }
   },

@@ -20,7 +20,9 @@
         "PRIMARY",
         "PRIMARY-HALF",
         "SECONDARY",
-        "SECONDARY-HALF"
+        "SECONDARY-HALF",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorText": {
@@ -29,7 +31,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY"
+        "SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "opacityBackground": {
@@ -49,7 +53,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverText": {
@@ -60,7 +66,9 @@
         "PRIMARY",
         "PRIMARY-ALT",
         "SECONDARY",
-        "SECONDARY-ALT"
+        "SECONDARY-ALT",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorBorder": {
@@ -72,7 +80,9 @@
         "PRIMARY",
         "PRIMARY-ALT",
         "SECONDARY",
-        "SECONDARY-ALT"
+        "SECONDARY-ALT",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverBorder": {
@@ -84,7 +94,9 @@
         "PRIMARY",
         "PRIMARY-ALT",
         "SECONDARY",
-        "SECONDARY-ALT"
+        "SECONDARY-ALT",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "achievementNumber": {

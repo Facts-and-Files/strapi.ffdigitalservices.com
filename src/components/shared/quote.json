@@ -33,7 +33,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorText": {
@@ -43,7 +45,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY"
+        "SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorBorder": {
@@ -58,7 +62,9 @@
         "PRIMARY-ALT",
         "SECONDARY",
         "SECONDARY-HALF",
-        "SECONDARY-ALT"
+        "SECONDARY-ALT",
+        "GRAY",
+        "GRAY-DARK"
       ]
     }
   },

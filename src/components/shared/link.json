@@ -32,7 +32,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorText": {
@@ -42,7 +44,9 @@
         "WHITE",
         "BLACK",
         "PRIMARY",
-        "SECONDARY"
+        "SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverBackground": {
@@ -59,7 +63,9 @@
         "SECONDARY-ALT",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverText": {
@@ -71,7 +77,9 @@
         "PRIMARY",
         "PRIMARY-ALT",
         "SECONDARY",
-        "SECONDARY-ALT"
+        "SECONDARY-ALT",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "colorBorder": {
@@ -85,7 +93,9 @@
         "SECONDARY",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "hoverBorder": {
@@ -101,7 +111,9 @@
         "SECONDARY-ALT",
         "SECONDARY-HALF",
         "BG-PRIMARY",
-        "BG-SECONDARY"
+        "BG-SECONDARY",
+        "GRAY",
+        "GRAY-DARK"
       ]
     },
     "fontWeight": {
