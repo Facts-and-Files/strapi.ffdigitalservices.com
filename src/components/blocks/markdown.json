@@ -7,6 +7,48 @@
   "attributes": {
     "content": {
       "type": "richtext"
+    },
+    "colorText": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "GRAY",
+        "GRAY-DARK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
+    },
+    "colorHeading": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "GRAY",
+        "GRAY-DARK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
+    },
+    "colorLink": {
+      "type": "enumeration",
+      "default": "BLACK",
+      "enum": [
+        "WHITE",
+        "BLACK",
+        "GRAY",
+        "GRAY-DARK",
+        "PRIMARY",
+        "PRIMARY-ALT",
+        "SECONDARY",
+        "SECONDARY-ALT"
+      ]
     }
   },
   "config": {}
