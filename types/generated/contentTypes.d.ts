@@ -787,6 +787,56 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    displayName: 'Privacy Policy Page';
+    pluralName: 'privacy-policy-pages';
+    singularName: 'privacy-policy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'blocks.transcribathon-progress',
+        'blocks.team',
+        'blocks.section-heading',
+        'blocks.quote-grid',
+        'blocks.person-card',
+        'blocks.newsletter',
+        'blocks.markdown',
+        'blocks.mapbox',
+        'blocks.hero',
+        'blocks.hero-with-achievements',
+        'blocks.featured-projects',
+        'blocks.featured-partners',
+        'blocks.featured-news',
+        'blocks.faqs',
+        'blocks.content-with-image',
+        'blocks.contact-form',
+        'blocks.card-grid',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy-page.privacy-policy-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
   collectionName: 'project_posts';
   info: {
@@ -1454,6 +1504,7 @@ declare module '@strapi/strapi' {
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
       'api::page.page': ApiPagePage;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::project-post.project-post': ApiProjectPostProjectPost;
       'api::tag.tag': ApiTagTag;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;

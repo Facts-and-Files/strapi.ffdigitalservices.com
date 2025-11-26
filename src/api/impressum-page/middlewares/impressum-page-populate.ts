@@ -1,9 +1,8 @@
 /**
- * `landing-page-populate` middleware
+ * `impressum-page-populate` middleware
  */
 
 import type { Core } from '@strapi/strapi';
-import projectPost from '../../project-post/controllers/project-post';
 
 const populate = {
     blocks: {
