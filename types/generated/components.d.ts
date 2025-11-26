@@ -501,6 +501,7 @@ export interface BlocksMarkdown extends Struct.ComponentSchema {
     > &
       Schema.Attribute.DefaultTo<'BLACK'>;
     content: Schema.Attribute.RichText;
+    heading: Schema.Attribute.Component<'shared.heading-large', false>;
   };
 }
 

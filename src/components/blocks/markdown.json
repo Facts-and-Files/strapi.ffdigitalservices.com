@@ -5,6 +5,11 @@
   },
   "options": {},
   "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "shared.heading-large",
+      "repeatable": false
+    },
     "content": {
       "type": "richtext"
     },

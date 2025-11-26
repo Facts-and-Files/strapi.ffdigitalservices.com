@@ -92,7 +92,17 @@ const populate = {
                     }
                 }
             },
-            "blocks.markdown": true,
+            "blocks.markdown": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
+                }
+            },
             "blocks.person-card": {
                 populate: {
                     image: {
