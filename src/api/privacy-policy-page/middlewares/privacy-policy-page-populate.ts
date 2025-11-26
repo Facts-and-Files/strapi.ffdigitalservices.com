@@ -1,5 +1,5 @@
 /**
- * `landing-page-populate` middleware
+ * `privacy-policy-page-populate` middleware
  */
 
 import type { Core } from '@strapi/strapi';

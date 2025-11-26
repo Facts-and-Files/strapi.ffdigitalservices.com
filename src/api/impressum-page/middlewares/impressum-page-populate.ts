@@ -1,9 +1,8 @@
 /**
- * `landing-page-populate` middleware
+ * `impressum-page-populate` middleware
  */
 
 import type { Core } from '@strapi/strapi';
-import projectPost from '../../project-post/controllers/project-post';
 
 const populate = {
     blocks: {
@@ -93,7 +92,17 @@ const populate = {
                     }
                 }
             },
-            "blocks.markdown": true,
+            "blocks.markdown": {
+                populate: {
+                    heading: {
+                        populate: {
+                            headingStyle: true,
+                            subHeadingStyle: true,
+                            overHeadingStyle: true,
+                        }
+                    },
+                }
+            },
             "blocks.person-card": {
                 populate: {
                     image: {
